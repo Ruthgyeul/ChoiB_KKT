@@ -77,18 +77,12 @@ msg = msg.trim();
 room = room.trim();
 sender = sender.trim(); 
 
-if (msg == "파일DB리로드") {
-CH.load("Blackmsg1", FT.github("Blackmsg1")); 
-CH.load("Blackmsg2", FT.github("Blackmsg2"));
-CH.load("Blackmsg3", FT.github("Blackmsg3"));
-CH.load("Blackmsg4", FT.github("Blackmsg4"));
-CH.load("Blackmsg5", FT.github("Blackmsg5"));
-CH.load("Petlist", FT.github("Petlist"));
-CH.load("꽃말", FT.github("꽃말"));
+if (msg == "!파일DB리로드") {
+CH.load("FILE.ex", FT.github("FILE.ex")); 
 replier.reply("파일 불러오기 성공");
 }
   
-if (msg.indexOf("파일추가") == 0) {
+if (msg.indexOf("!파일추가") == 0) {
 var FileName = msg.substr(5);
 var DataF = FT.github(FileName);
 CH.load(FileName, DataF);
