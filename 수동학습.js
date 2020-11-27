@@ -69,8 +69,6 @@ msg = msg.trim();
 room = room.trim();
 sender = sender.trim();
   
-if (room == "지구b" || room == "R. 체른") {
-
 if (msg.indexOf("최빈공부") == 0 || msg.indexOf("최빈학습") == 0) { 
 var study0 = msg.substring(5,msg.length) 
 var study1 = study0.split("/") 
@@ -87,7 +85,7 @@ DB.saveData("수동DB",suy1.trim(), suy2);
 //replier.reply("친구야? 너님이 가르칠려는 단어/문장 안에 쌉소리가 있어. \n이딴거 안 배울래."); 
 }
   
-let talk = read("수동DB", msg) 
+let talk = DB.readData(msg); 
 if (talk !== null) { 
 CH.say(talk, replier);
 }
@@ -95,14 +93,13 @@ CH.say(talk, replier);
 if (msg.indexOf("최빈삭제") == 0 || msg.indexOf("최빈잊어") == 0) { 
 //java.io.File.remove("sdcard/수동DB/" + msg.substr(5));
 //replier.reply(sender + " 친구 덕에 「" + msg.substr(5) + "」의 기억을 잊었어!"); 
-Ch.log("R. 체른", msg.substr(5) + ".txt 파일 삭제 요청\nBy " + sender + "\n- " + CH.Time())
+Ch.log(msg.substr(5) + ".txt 파일 삭제 요청\nBy " + sender + "\n- " + CH.Time());
 CH.say("파일 삭제 기능 구현 실패로 수동 삭제로 진행됩니다.\n체온에게 파일 삭제 요청 완료!", replier);
 }
   
-if (msg == "최빈수동내역") {
+if (msg == "!최빈수동") {
 var file = new java.io.File(sdcard + "/수동DB/");
 CH.say("난 지금껏 " + file.list().length + "개의 채팅을 수동으로 배웠어.",replier);
 }
   
-}
 }
