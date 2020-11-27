@@ -6,8 +6,8 @@ CH.say = function(msg,replier) {
 replier.reply(msg);
 }
 
-CH.log = function(room,msg) {
-Api.replyRoom(room,msg);
+CH.log = function(msg) {
+Api.replyRoom("R. 체른", msg);
 }
 
 CH.Time = function() {
