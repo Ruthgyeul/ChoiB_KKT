@@ -16,7 +16,7 @@ return data[r];
 };
 
 CH.isValidData = function(data) {
-var noSave = ["사진을 보냈습니다.", "동영상을 보냇습니다.", "음성메시지를 보냈습니다.", "카카오톡 프로필", "www.", "샵검색:", "#", "@", "!", "//", "http:", "https:", "빈이", "비니", "빈", "최빈", "봇", "삐뽀", "이모티콘을 보냈습니다.", "!운세", "/", "|", ".", "관리자", "오리방", "지구방", "니셜이", "니셔리", "니셔", "?"]; 
+var noSave = ["사진을 보냈습니다.", "동영상을 보냇습니다.", "음성메시지를 보냈습니다.", "카카오톡 프로필", "www.", "샵검색:", "#", "@", "!", "//", "http:", "https:", "빈이", "비니", "빈", "최빈", "봇", "삐뽀", "이모티콘을 보냈습니다.", "!운세", "/", "|", ".", "관리자", "오리방", "지구방", "니셜이", "니셔리", "니셔", "?", "체온", "체오니"]; 
 for (var n = 0; n < noSave.length; n++) { 
 if (data == noSave[n]) return false;
 }
@@ -94,7 +94,7 @@ CH.study(room, msg);
 if (room == "지구b") {
 if ((Math.floor(Math.random() * 5)) == 0) {
 var chat = CH.getRandomChat(room);
-if (chat != null) CH.say(chat, replier); 
+if (chat != null && CH.isValidData(chat)) CH.say(chat, replier); 
 }
 }
 
