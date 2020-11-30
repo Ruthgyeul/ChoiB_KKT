@@ -94,7 +94,7 @@ CH.say(talk, replier);
 if (msg.indexOf("최빈삭제") == 0 || msg.indexOf("최빈잊어") == 0) { 
 //java.io.File.remove("sdcard/수동DB/" + msg.substr(5));
 //replier.reply(sender + " 친구 덕에 「" + msg.substr(5) + "」의 기억을 잊었어!"); 
-Ch.log(msg.substr(5) + ".txt 파일 삭제 요청\nBy " + sender + "\n- " + CH.Time());
+CH.log(msg.substr(5) + ".txt 파일 삭제 요청\nBy " + sender + "\n- " + CH.Time());
 CH.say("파일 삭제 기능 구현 실패로 수동 삭제로 진행됩니다.\n체온에게 파일 삭제 요청 완료!", replier);
 }
   
