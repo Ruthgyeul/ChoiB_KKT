@@ -22,6 +22,7 @@ var time = (mo + "월 " + d + "일 " + h + "시 " + min + "분 " + sec + "초");
 return time;
 } catch(e) {
 return "시간 표기 오류: " + e;
+}
 };
 
 DB.createDir = function() {
