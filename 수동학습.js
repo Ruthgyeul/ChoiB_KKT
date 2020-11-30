@@ -100,7 +100,7 @@ CH.say("파일 삭제 기능 구현 실패로 수동 삭제로 진행됩니다.\
   
 if (msg == "!최빈수동") {
 var file = new java.io.File(sdcard + "/수동DB/");
-CH.say("난 지금껏 " + (file.list().length - 1) + "개의 채팅을 수동으로 배웠어.",replier);
+CH.say("난 지금껏 " + file.list().length + "개의 채팅을 수동으로 배웠어.",replier);
 }
   
 }
