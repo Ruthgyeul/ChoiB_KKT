@@ -101,7 +101,7 @@ if (chat != null && CH.isValidData(chat)) CH.say(chat, replier);
 if (msg == "!최빈쌉소리") {
 var data = DB.readData(room); 
 var datal = data.split("\n").length; 
-CH.say("최비니는 지금껏 여기서 총 " + datal + "개의 채팅을 배웠어요!");
+CH.say("최비니는 지금껏 여기서 총 " + datal + "개의 채팅을 배웠어요!", replier);
 }
   
 }
