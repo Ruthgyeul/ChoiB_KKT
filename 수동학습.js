@@ -77,7 +77,7 @@ var suy1 = study1[0]
 var suy2 = study1[1] 
 //if (CH.isValidData1(suy1) && CH.isValidData2(suy2)) {
 CH.say(sender + " 친구가 「" + suy1 + "」(은)는 「" +suy2 +"」(이)라고 알려줬어!",replier); 
-DB.saveData("수동DB",suy1.trim(), suy2);
+DB.saveData(suy1.trim(), suy2);
 //} else if (CH.isValidData1(suy1) == false && CH.isValidData2(suy2)) {
 //replier.reply("친구야? 「" + suy1 + "」여기 안에 쌉소리가 있어. \n이딴거 안 배울래."); 
 //} else if (CH.isValidData1(suy1) && CH.isValidData2(suy2) == false) {
