@@ -4,6 +4,9 @@ const DB = {};
 const preMsg = {}; 
 
 var GHData = [];
+var G1 = [];
+var G2 = [];
+var GHBlist = [];
 
 CH.say = function(msg, replier) { 
 replier.reply(msg); 
