@@ -140,6 +140,11 @@ if (CH.isValidSender(sender) && CH.isValidData(msg)) {
 CH.study(room, msg); 
 }
 
+var noReply = [".", "사진", "동영상", "음성메시지", "카카오톡 프로필", "(이모티콘)", "카카오링크 이미지"];
+for (var n = 0; n < noReply.length; n++) {
+if (msg == noReply[n]) return;
+}
+  
 if (room == "지구b") {
 if ((Math.floor(Math.random() * 5)) == 0) {
 var chat = CH.getRandomChat(room);
