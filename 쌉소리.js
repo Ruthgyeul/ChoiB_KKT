@@ -3,6 +3,8 @@ const CH = {};
 const DB = {}; 
 const preMsg = {}; 
 
+var GHData = [];
+
 CH.say = function(msg, replier) { 
 replier.reply(msg); 
 };
@@ -86,6 +88,40 @@ return "에러: " + e;
 }
 };
 
+DB.loadGHData = function(FileName) {
+try {
+var url = new java.net.URL("https://raw.githubusercontent.com/Rutheon/ChoiB_KKT/main/File/" + FileName + ".txt");
+var con = url.openConnection();
+if (con != null) {
+con.setConnectTimeout(5000);
+con.setUseCaches(false);
+var isr = new java.io.InputStreamReader(con.getInputStream());
+var br = new java.io.BufferedReader(isr);
+var str = br.readLine();
+var line = "";
+while ((line = br.readLine()) != null) {
+str += "\n" + line;
+}
+isr.close();
+br.close();
+con.disconnect();
+}
+return str.toString();
+} catch (e) {
+return "에러: " + e;
+}
+};
+
+DB.initChatData = function(FileName) {
+var data = DB.loadGHData(FileName);
+if (data == null) {
+null;
+//"파일 호출 실패!"
+} else {
+GHData = data.split("\n");
+}
+};
+
 DB.createDir();
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB) {
@@ -113,8 +149,8 @@ CH.say(chat, replier);
 }
 
 if (msg == "!블랙") {
-var Blist = "그런거 없음";
-CH.say("내가 무시까는 사람들 명단이야.\n해제 요청은 체온 갠톡으로 와!\n\n\n" + Utils.compress() + Blist, replier);
+var Blist = GHData
+CH.say("내가 무시까는 사람들 명단이야.\n해제 요청은 체온 갠톡으로 와!\n\n\n" + Utils.compress() + GHData, replier);
 }
   
 if (msg == "!필터링") {
