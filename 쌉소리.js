@@ -123,6 +123,7 @@ GHData = data.split("\n");
 };
 
 DB.createDir();
+DB.initChatData();
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB) {
 msg = msg.trim();
