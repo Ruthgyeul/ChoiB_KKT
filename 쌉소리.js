@@ -3,7 +3,6 @@ const CH = {};
 const DB = {}; 
 const preMsg = {}; 
 
-var GHData = [];
 var G1 = [];
 var G2 = [];
 var GHBlist = [];
@@ -115,13 +114,30 @@ return "에러: " + e;
 }
 };
 
-DB.initChatData = function(FileName) {
-var data = DB.loadGHData(FileName);
+DB.initChatData1 = function() {
+var data = DB.loadGHData("B1");
 if (data == null) {
 null;
-//"파일 호출 실패!"
 } else {
-GHData = data.split("\n");
+G1 = data.split("\n");
+}
+};
+
+DB.initChatData2 = function() {
+var data = DB.loadGHData("B2");
+if (data == null) {
+null;
+} else {
+G2 = data.split("\n");
+}
+};
+
+DB.initChatData3 = function() {
+var data = DB.loadGHData("Blist");
+if (data == null) {
+null;
+} else {
+GHBlist = data.split("\n");
 }
 };
 
@@ -143,9 +159,9 @@ if (CH.isValidSender(sender) && CH.isValidData(msg)) {
 CH.study(room, msg); 
 }
 
-var noReply = [".", "사진", "동영상", "음성메시지", "카카오톡 프로필", "(이모티콘)", "카카오링크 이미지"];
+var noReply = [".", "!", "/"];
 for (var n = 0; n < noReply.length; n++) {
-if (msg == noReply[n]) return;
+if (msg.startsWith(noReply[n])) return;
 }
   
 if (room == "지구b") {
@@ -158,13 +174,17 @@ CH.say(chat, replier);
 }
 
 if (msg == "!블랙") {
-var Blist = GHData
-CH.say("내가 무시까는 사람들 명단이야.\n해제 요청은 체온 갠톡으로 와!\n\n\n" + Utils.compress() + GHData, replier);
+var data = GHlist
+var Blist = data.replace(",", "\n");
+CH.say("내가 무시까는 사람들 명단이야.\n해제 요청은 체온 갠톡으로 와!\n\n\n" + Utils.compress() + Blist, replier);
 }
   
 if (msg == "!필터링") {
-var FTlist = "리스트 불러오기 실패";
-CH.say("지금 내가 안배우는 단어 목록들이야.\n\n\n" + Utils.compress() + FTlist,replier);
+var data1 = G1
+var FTlist1 = data1.replace(",", "\n");
+var data2 = G2
+var FTlist2 = data2.replace(",", "\n");
+CH.say("내가 배우지 않는 단어 목록들이야.\n\n\n" + Utils.compress() + "해당 단어로 시작하는 챗 무시:\n" + FTlist1 + "\n\n\n해당 단어 포함시 무시:\n" + FTlist2,replier);
 }
   
 if (msg == "!쌉소리") {
