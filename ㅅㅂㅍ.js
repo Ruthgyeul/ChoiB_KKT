@@ -1,7 +1,7 @@
 var chatCount = {};
 
 function response(room, msg, sender, isGroupChat, _replier, ImageDB) {
-if (room == "뱁새봇") {
+if (room == "지구b") {
 
 var replier = {};
 
@@ -14,7 +14,7 @@ if (chatCount[room] == undefined) chatCount[room] = 0;
 chatCount[room]++;
 
 if (chatCount[room] >= 300) {
-replier.reply("[뱁새i] ㅅㅂㅍ!");
+replier.reply("우왕! ㅅㅂㅍ이다!");
 chatCount[room] = 0;
 }
 
