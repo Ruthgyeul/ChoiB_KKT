@@ -108,7 +108,7 @@ if (CH.isValidSender(sender) && CH.isValidWrite(msg)) {
 CH.study(room, msg); 
 }
 
-var noReply = ["!운세", "!기기정보", "!주사위", "!타이머", "!한강물", "!쌉소리", "/"];
+var noReply = ["!운세", "!기기정보", "!주사위", "!타이머", "!한강물", "/"];
 for (var n = 0; n < noReply.length; n++) {
 if (msg.startsWith(noReply[n])) return;
 }
