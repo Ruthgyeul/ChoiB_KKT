@@ -31,9 +31,8 @@ if (data.indexOf(noValid[n]) != -1) return false;
 return true;
 };
 
-
 CH.isValidData = function(data) {
-var noSave = ["\n", "카카오톡", "카톡", "이모티콘을 보냈습니다.", "이모티콘", "임티", "사진을 보냈습니다.", "사진", "동영상을 보냇습니다.", "동영상", "음성메시지를 보냈습니다.", "음성메시지", "카카오톡 프로필", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", "/", "보이스톡", "페이스톡", "영상", "검색", "`", "@", "#", "$", "%", "^", "&", "*", "_", "-", "=", "{", "}", "[", "]", "₩", "|", ":", "'", "<", ">", "/"]; 
+var noSave = ["\n", "카카오톡", "카톡", "이모티콘을 보냈습니다.", "이모티콘", "사진을 보냈습니다.", "사진", "동영상을 보냇습니다.", "동영상", "음성메시지를 보냈습니다.", "음성메시지", "카카오톡 프로필", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", "/", "보이스톡", "페이스톡", "영상", "검색", "`", "@", "#", "$", "%", "^", "&", "*", "_", "-", "=", "{", "}", "[", "]", "₩", "|", ":", "'", "<", ">", "/"]; 
 for (var n = 0; n < noSave.length; n++) { 
 if (data.startsWith(noSave[n])) return false;
 }
@@ -133,9 +132,7 @@ CH.say(chat, replier);
 
 if (msg == "!쌉소리") {
 var data = DB.readData(room); 
-var data1 = CH.isValidData(data);
 var datal = data.split("\n").length; 
-var datat = data1.split("\n").length; 
 CH.say("난 지금껏 총 " + datal + "개의 채팅을 배웠고,\n그 중 " + datat + "개가 내 대사야.", replier);
 }
   
