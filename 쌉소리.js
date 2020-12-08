@@ -112,6 +112,15 @@ CH.say(chat, replier);
 }
 }
 }
+  
+if (room == "오리b") {
+if ((Math.floor(Math.random() * 5)) == 0) {
+var chat = CH.getRandomChat(room);
+if (chat != null && CH.isValidData(chat)) {
+CH.say(chat, replier); 
+}
+}
+}
 
 if (msg == "!쌉소리") {
 var data = DB.readData(room); 
