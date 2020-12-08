@@ -95,11 +95,11 @@ return;
 
 preMsg[room] = msg;
 
-if (CH.isValidSender(sender) && CH.isValidData(msg)) {
+if (CH.isValidSender(sender)) {
 CH.study(room, msg); 
 }
 
-var noReply = ["!", "/"];
+var noReply = ["!운세", "!기기정보", "!주사위", "!타이머", "!한강물", "!쌉소리", "/"];
 for (var n = 0; n < noReply.length; n++) {
 if (msg.startsWith(noReply[n])) return;
 }
