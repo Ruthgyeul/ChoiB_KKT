@@ -40,19 +40,19 @@ if (msg == "ㅅㅂㅍ") {
 CH.say("우왕! 개쩐다!!",replier);
 }
   
-if (msg.indexOf("배고파")!=-1) {
+if (msg.indexOf("배고파")==0) {
 CH.say("앜!!! 밥 먹어!!! 귀찮다고 안먹지 말고 먹어!!!!",replier);
 }
   
-if (msg.indexOf("권남")!=-1) {
+if (msg.indexOf("권남")==0) {
 CH.say("권남 쩔더라~ㅋ",replier);
 }
   
-if (msg.indexOf("뉴페")!=-1) {
+if (msg.indexOf("뉴페")==0) {
 CH.say("뉴페? ㅇㄷ?",replier);
 }
   
-if (msg == "ㅎㅇ" || msg.indexOf("안냥")!=-1 || msg.indexOf("안뇽")!=-1 || msg.indexOf("안녕")!=-1) {
+if (msg == "ㅎㅇ" || msg.indexOf("안냥")==0 || msg.indexOf("안뇽")==0 || msg.indexOf("안녕")==0) {
 CH.say("ㅂㅇ~!",replier);
 }
   
@@ -60,15 +60,15 @@ if (msg == "ㅈㄱ") {
 CH.say("빠잉~!",replier);
 }
   
-if (msg.indexOf("학교")!=-1 || msg.indexOf("수업")!=-1 || msg.indexOf("숙제")!=-1 || msg.indexOf("과제")!=-1) {
+if (msg.indexOf("학교")==0 || msg.indexOf("수업")==0 || msg.indexOf("숙제")==0 || msg.indexOf("과제")==0) {
 CH.say("앜ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",replier);
 }
   
-if (msg.indexOf("게임")!=-1 || msg.indexOf("즐겜")!=-1) {
+if (msg.indexOf("게임")==0 || msg.indexOf("즐겜")==0) {
 CH.say("즐겜~",replier);
 }
   
-if (msg.indexOf("강퇴")!=-1 || msg.indexOf("물갈")!=-1) {
+if (msg.indexOf("강퇴")==0 || msg.indexOf("물갈")==0) {
 CH.say("헐헐 누구 죽일거야??",replier);
 }
   
