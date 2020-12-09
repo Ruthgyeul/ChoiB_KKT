@@ -16,7 +16,7 @@ return data[r];
 };
 
 CH.isValidSender = function(sender){
-var noValid = ["방장봇", "봇", ".", "ㅎㅇ", "ㅇ", "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "{", "}", "[", "]", "₩", "'", "<", ">"]; 
+var noValid = ["카카오톡", "카톡", "방장봇", "봇", ".", "ㅇ", "ㅎㅇ", "."]; 
 for (var n = 0; n < noValid.length; n++) { 
 if (sender.indexOf(noValid[n]) != -1) return false; 
 }
@@ -133,7 +133,7 @@ CH.say(chat, replier);
 if (msg == "!쌉소리") {
 var data = DB.readData(room); 
 var datal = data.split("\n").length; 
-CH.say("난 지금껏 총 " + datal + "개의 채팅을 배웠고,\n그 중 " + datat + "개가 내 대사야.", replier);
+CH.say("난 지금껏 총 " + datal + "개의 채팅을 배웠어.", replier);
 }
   
 }
