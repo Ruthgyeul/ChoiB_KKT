@@ -20,6 +20,8 @@ return;
 
 preMsg[room] = msg;
 
+if (room == "지구b" || room == "오리b") {
+  
 if (msg == "?") {
 CH.say("엥? 갈고리 치우자~",replier);
 }
@@ -70,6 +72,8 @@ CH.say("즐겜~",replier);
   
 if (msg.indexOf("강퇴")==0 || msg.indexOf("물갈")==0) {
 CH.say("헐헐 누구 죽일거야??",replier);
+}
+  
 }
   
 }
