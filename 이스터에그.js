@@ -2,7 +2,7 @@ const CH = {};
 const preMsg = {}; 
 
 CH.say = function(msg, replir) {
-if (Math.floor(Math.random() * 15) == 0) { //6.6% 확률
+if (Math.floor(Math.random() * 13) == 0) { //7.7% 확률
 replier.reply(msg); 
 } else {
 null;
