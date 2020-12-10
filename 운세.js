@@ -9,11 +9,11 @@
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
 
 if (msg == "!운세") {
-let rand = Math.floor(Math.random() * 1001) + 1; //100%
-let dice1 = Math.floor(Math.random() * 30) + 1; //14.3%
-let dice2 = Math.floor(Math.random() * 70) + 31; //53%
-let dice3 = Math.floor(Math.random() * 85) + 71; //20%
-let dice4 = Math.floor(Math.random() * 99) + 86; //12.2%
+let rand = Math.floor(Math.random() * (1001 - 1)) + 1; //100%
+let dice1 = Math.floor(Math.random() * (30 - 1)) + 1; //14.3%
+let dice2 = Math.floor(Math.random() * (70 - 31)) + 31; //53%
+let dice3 = Math.floor(Math.random() * (85 - 71)) + 71; //20%
+let dice4 = Math.floor(Math.random() * (99 - 86)) + 86; //12.2%
 
 if (rand < 4) {
 replier.reply((Math.floor(Math.random() * 2) ? "헐! " : "아? ") + sender + " 친구의 운세는 무려 100%야!!!");
@@ -22,16 +22,16 @@ if (rand > 3 && rand < 8) {
 replier.reply((Math.floor(Math.random() * 2) ? "엌ㅋ! " : "아.. ") + sender + " 친구의 운세는 무려 0%라고~ㅋ");
 }
 if (rand > 7 && rand < 131) {
-replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice4 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice4 + "%가 나왔엉~d4");
 }
 if (rand > 130 && rand < 275) {
-replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice1 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice1 + "%가 나왔엉~d1");
 }
 if (rand > 274 && rand < 476) {
-replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice3 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice3 + "%가 나왔엉~d3");
 }
 if (rand > 475) {
-replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice2 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice2 + "%가 나왔엉~d2");
 }
   
 }
