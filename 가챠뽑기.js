@@ -11,7 +11,6 @@
 const sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath(); 
 const CH = {}; 
 const DB = {}; 
-const preMsg = {}; 
 
 CH.getRandomText = function(name) { 
 var data = DB.readData(name); 
@@ -47,36 +46,34 @@ msg = msg.trim();
 room = room.trim();
 sender = sender.trim();
 
-if (preMsg[room] == msg) {
-return; 
-}
-
-preMsg[room] = msg;
-
 if (msg = "!가챠정보") {
 replier.reply("[가챠 정보]" + Utils.compress() + "\n\n\n");
 }
   
 if (msg == "!가챠") {
-for (int i = 1; i <= 9; i++) {
-rand = (int) (Math.random() * (100 - 1 + 1) + 1);
-
-if ( 1 <= rand && rand <=  3 ) {
 replier.reply("희귀도: 5");
+var s = 0;
+var a = ++;
 } else if ( 4 <= randombox && randombox <=  13) {
 replier.reply("희귀도: 4");
+var s = ++;
+var a = 0;
 } else {
 replier.reply("희귀도: 3");
+var s = ++;
+var a = ++;
 }
 }
 
-rand = (int) (Math.random() * (100 - 1 + 1) + 1);
 if (1 <= rand && rand <=  3) {
 replier.reply("희귀도: 5");
 } else if (4 <= rand && rand <=  100) {
 replier.reply("천장 희귀도: 4");
+var i = 0;
 }
-  
+return;
 }
+}
+ 
   
 }
