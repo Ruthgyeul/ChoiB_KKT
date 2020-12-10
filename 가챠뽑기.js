@@ -1,34 +1,82 @@
 //계산: 100(최소 포함/1000) - 100(최대 포함/1000)
-//0% - 0.3%
-//1% ~ 30% - 14.3%
-//31% ~70% - 53%
-//71% ~ 85% - 20%
-//86% ~ 99% - 12.2%
-//100% - 0.2%
+
+// 5 등급 - 0.6%
+// 4 등급 - 5.1%
+// 3 등급 - 94.3%
+
+// 5 등급 천장 - 1.6% (90연차 진행시 반드시 등장)
+// 4 등급 천장 - 13% (10연차 진행시 반드시 등장)
+// 3 등급 천장 - 85.4%
+
+const sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath(); 
+const CH = {}; 
+const DB = {}; 
+const preMsg = {}; 
+
+CH.getRandomText = function(name) { 
+var data = DB.readData(name); 
+if (data == null) return null; 
+data = data.split("\n"); 
+var r = Math.floor(Math.random() * data.length); 
+return data[r];
+};
+
+DB.readData = function(name) {
+try { 
+var file = new java.io.File(sdcard + "/파일DB/" + name + ".txt");
+if (!file.exists()) return null; 
+var fis = new java.io.FileInputStream(file);
+var isr = new java.io.InputStreamReader(fis);
+var br = new java.io.BufferedReader(isr);
+var str = br.readLine();
+var line = "";
+while ((line = br.readLine()) != null) {
+str += "\n" + line;
+}
+fis.close();
+isr.close();
+br.close();
+return str;
+} catch (e) {
+return "에러: " + e;
+}
+};
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
+msg = msg.trim();
+room = room.trim();
+sender = sender.trim();
 
-if (msg == "!운세") {
-let rand = Math.floor(Math.random() * (1001 - 1)) + 1; //100%
-
-if (rand < 4) {
-} 
-
-if (rand > 3 && rand < 8) {
+if (preMsg[room] == msg) {
+return; 
 }
 
-if (rand > 7 && rand < 131) {
+preMsg[room] = msg;
+
+if (msg = "!가챠정보") {
+replier.reply("[가챠 정보]" + Utils.compress() + "\n\n\n");
+}
+  
+if (msg == "!가챠") {
+for (int i = 1; i <= 9; i++) {
+rand = (int) (Math.random() * (100 - 1 + 1) + 1);
+
+if ( 1 <= rand && rand <=  3 ) {
+replier.reply("희귀도: 5");
+} else if ( 4 <= randombox && randombox <=  13) {
+replier.reply("희귀도: 4");
+} else {
+replier.reply("희귀도: 3");
+}
 }
 
-if (rand > 130 && rand < 275) {
-}
-
-if (rand > 274 && rand < 476) {
-}
-
-if (rand > 475) {
+rand = (int) (Math.random() * (100 - 1 + 1) + 1);
+if (1 <= rand && rand <=  3) {
+replier.reply("희귀도: 5");
+} else if (4 <= rand && rand <=  100) {
+replier.reply("천장 희귀도: 4");
 }
   
 }
-
+  
 }
