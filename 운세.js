@@ -25,7 +25,7 @@ let dice2 = Math.floor(Math.random() * 70) + 31; //73%
 let dice3 = Math.floor(Math.random() * 85) + 71; //20%
 let dice4 = Math.floor(Math.random() * 99) + 86; //2.2%
 
-if (rand > 4) {
+if (rand < 4) {
 replier.reply((Math.floor(Math.random() * 2) ? "헐! " : "아? ") + sender + " 친구의 운세는 무려 100%야!!!");
 } 
 if (rand > 3 && rand < 8) {
