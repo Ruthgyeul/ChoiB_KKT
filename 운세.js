@@ -26,22 +26,22 @@ let dice3 = Math.floor(Math.random() * 85) + 71; //20%
 let dice4 = Math.floor(Math.random() * 99) + 86; //2.2%
 
 if (rand > 4) {
-replier.reply(Math.floor(Math.random() * 2) ? "헐! " : "아? ") + sender + " 친구의 운세는 무려 100%야!!!");
+replier.reply((Math.floor(Math.random() * 2) ? "헐! " : "아? ") + sender + " 친구의 운세는 무려 100%야!!!");
 } 
 if (rand > 3 && rand < 8) {
-replier.reply(Math.floor(Math.random() * 2) ? "엌ㅋ! " : "아.. ") + sender + " 친구의 운세는 무려 0%라고~ㅋ");
+replier.reply((Math.floor(Math.random() * 2) ? "엌ㅋ! " : "아.. ") + sender + " 친구의 운세는 무려 0%라고~ㅋ");
 }
 if (rand > 7 && rand < 31) {
-replier.reply(Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice4 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice4 + "%가 나왔엉~");
 }
 if (rand > 30 && rand < 75) {
-replier.reply(Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice1 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice1 + "%가 나왔엉~");
 }
 if (rand > 74 && rand < 276) {
-replier.reply(Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice3 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice3 + "%가 나왔엉~");
 }
 if (rand > 275) {
-replier.reply(Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice2 + "%가 나왔엉~");
+replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + " 친구의 운세는 " + dice2 + "%가 나왔엉~");
 }
   
 }
