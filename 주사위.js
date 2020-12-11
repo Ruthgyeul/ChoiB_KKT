@@ -1,5 +1,4 @@
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
-if (room == "지구b" || room == "오리b") { 
 
 if (msg == "!주사위") {
 if (Math.floor(Math.random() * 12) == 0) {
@@ -11,4 +10,3 @@ replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + 
 }
   
 }
-} 
