@@ -1,8 +1,7 @@
 const CH = {}; 
-const preMsg = {}; 
 
 CH.say = function(msg, replir) {
-if (Math.floor(Math.random() * 17) == 0) { //5.8% 확률
+if (Math.floor(Math.random() * 12) == 0) { //8.3% 확률
 replier.reply(msg); 
 } else {
 null;
@@ -13,14 +12,8 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
 msg = msg.trim();
 room = room.trim();
 sender = sender.trim();
-  
-if (preMsg[room] == msg) {
-return; 
-}
 
-preMsg[room] = msg;
-
-if (room == "지구b" || room == "오리b") {
+if (room.indexOf("b")==0) {
   
 if (msg == "?") {
 CH.say("엥? 갈고리 치우자~",replier);
