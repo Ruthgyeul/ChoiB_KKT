@@ -8,9 +8,9 @@
 ## Open API
 - Naver – https://developers.naver.com
 - Android - https://developer.android.com
-- PingPong - https://pingpong.us
 - Kakao - https://developers.kakao.com/features/kakao
 - Evernote - https://dev.evernote.com/
+- Mozilla - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ## Copyright
 - Copyright (C) 2020 카카오톡 최빈봇 by R. 체른 
