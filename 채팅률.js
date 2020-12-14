@@ -7,10 +7,17 @@
 const sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath(); 
 const CH = {}; 
 const DB = {}; 
-const preMsg = {}; 
 
 CH.say = function(msg, replier) { 
 replier.reply(msg); 
+};
+
+CH.isValidSender = function(sender){
+var noValid = ["방장봇"]; 
+for (var n = 0; n < noValid.length; n++) { 
+if (sender.indexOf(noValid[n]) != -1) return false; 
+}
+return true;
 };
 
 CH.study = function(room, msg) { 
@@ -23,13 +30,13 @@ DB.saveData(room, data + "\n" + msg);
 };
 
 DB.createDir = function() { 
-var folder = new java.io.File(sdcard + "/쌉소리DB/"); 
+var folder = new java.io.File(sdcard + "/채팅률DB/"); 
 folder.mkdirs(); 
 };
 
 DB.saveData = function(name, msg) {
 try {
-var file = new java.io.File(sdcard + "/쌉소리DB/" + name + ".txt");
+var file = new java.io.File(sdcard + "/채팅률DB/" + name + ".txt");
 var fos = new java.io.FileOutputStream(file);
 var str = new java.lang.String(msg);
 fos.write(str.getBytes());
@@ -41,7 +48,7 @@ return "에러: " + e;
 
 DB.readData = function(name) {
 try { 
-var file = new java.io.File(sdcard + "/쌉소리DB/" + name + ".txt");
+var file = new java.io.File(sdcard + "/채팅률DB/" + name + ".txt");
 if (!file.exists()) return null; 
 var fis = new java.io.FileInputStream(file);
 var isr = new java.io.InputStreamReader(fis);
@@ -67,10 +74,19 @@ msg = msg.trim();
 room = room.trim();
 sender = sender.trim();
 
-if (msg == "!쌉소리") {
+if (CH.isValidSender(sender)) {
+CH.study(room, sender);
+}
+  
+if (msg == "!채팅") {
 var data = DB.readData(room); 
-var datal = data.split("\n").length; 
-CH.say("난 지금껏 총 " + datal + "개의 채팅을 배웠어.", replier);
+for (var n = 0; n < data.split("\n").length; n++) { 
+if (sender==(data[n])) {
+var datal = data.split(sender).length; 
+var dataw = data.indexOf(sender, 0);
+CH.say(sender + " 친구는 지금껏 " + dataw + "개의 채팅을 쳤어. (12/14)", replier);
+}
+}
 }
   
 }
