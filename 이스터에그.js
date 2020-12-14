@@ -1,7 +1,7 @@
 const CH = {}; 
 
 CH.say = function(msg, replir) {
-if (Math.floor(Math.random() * 12) == 0) { //8.3% 확률
+if (Math.floor(Math.random() * 11) == 0) { //9% 확률
 replier.reply(msg); 
 } else {
 null;
@@ -31,7 +31,7 @@ if (msg == "꺼져" || msg == "ㄲㅈ" || msg == "저리가" || msg == "끄져")
 CH.say("힝.. 최빈이 슬퍼..",replier);
 }
 
-if (msg == "ㅅㅂㅍ") {
+if (msg == "ㅅㅂㅍ" || msg == "300+" || msg == "삼백플") {
 CH.say("우왕! 개쩐다!!",replier);
 }
   
@@ -39,15 +39,15 @@ if (msg.indexOf("배고파")==0) {
 CH.say("앜!!! 밥 먹어!!! 귀찮다고 안먹지 말고 먹어!!!!",replier);
 }
   
-if (msg.indexOf("권남")==0) {
+if (msg.indexOf("권남")==0 || msg.indexOf("권력")==0) {
 CH.say("권남 쩔더라~ㅋ",replier);
 }
   
-if (msg.indexOf("뉴페")==0) {
+if (msg.indexOf("뉴페")==0 || msg.indexOf("신입")==0) {
 CH.say("뉴페? ㅇㄷ?",replier);
 }
   
-if (msg == "ㅎㅇ" || msg.indexOf("안냥")==0 || msg.indexOf("안뇽")==0 || msg.indexOf("안녕")==0) {
+if (msg.indexOf("ㅎㅇ")==0 || msg.indexOf("안냥")==0 || msg.indexOf("안뇽")==0 || msg.indexOf("안녕")==0) {
 CH.say("ㅂㅇ~!",replier);
 }
   
