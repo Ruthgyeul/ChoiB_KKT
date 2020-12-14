@@ -80,13 +80,9 @@ CH.study(room, sender);
   
 if (msg == "!채팅") {
 var data = DB.readData(room); 
-for (var n = 0; n < data.split("\n").length; n++) { 
-if (sender==(data[n])) {
-var datal = data.split(sender).length; 
 var dataw = data.indexOf(sender, 0);
-CH.say(sender + " 친구는 지금껏 " + dataw + "개의 채팅을 쳤어. (12/14)", replier);
-}
-}
+var datal = data.filter(data.split("\n").length == sender);
+CH.say(sender + " 친구는 지금껏 " + datal + "개의 채팅을 쳤어. (12/14)", replier);
 }
   
 }
