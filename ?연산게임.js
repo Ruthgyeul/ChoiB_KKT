@@ -4,7 +4,7 @@ var answerForCalcQuiz = null; // 문제의 답
 
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
 
-if (msg == "!수학게임") {
+if (msg == "!수학게임" || msg == "!연산게임" || msg == "!계산게임") {
 if (msgSenderForCalcQuiz == null) {
 msgSenderForCalcQuiz = sender;
 
@@ -26,7 +26,7 @@ replier.reply(sender + " 친구? 순서를 지켜요~");
 }
 }
 
-if ((sender == msgSenderForCalcQuiz) && (getCalcQuizOn == 1) && (msg != "!수학게임")) {
+if ((sender == msgSenderForCalcQuiz) && (getCalcQuizOn == 1) && (msg != "!수학게임" || msg != "!연산게임" || msg != "!계산게임")) {
 msgSenderForCalcQuiz = null;
 if (msg == answerForCalcQuiz) {
 replier.reply(sender + " 친구, 정답이야!");
