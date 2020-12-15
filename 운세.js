@@ -7,14 +7,12 @@
 //100% - 0.1%
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
-
 if (msg == "!운세") {
 let rand = Math.floor(Math.random() * (10000 - 1)) + 1; //100%
-let dice1 = Math.floor(Math.random() * (21 - 1)) + 1; //4%
-let dice2 = Math.floor(Math.random() * (86 - 22)) + 22; //58%
+let dice1 = Math.floor(Math.random() * (22 - 1)) + 1; //4%
+let dice2 = Math.floor(Math.random() * (86 - 23)) + 23; //58%
 let dice3 = Math.floor(Math.random() * (94 - 87)) + 87; //24%
 let dice4 = Math.floor(Math.random() * (99 - 95)) + 95; //13.5%
-
 if (rand < 11) {
 replier.reply((Math.floor(Math.random() * 2) ? "헐랭! " : "에?! ") + sender + " 친구의 운세는 무려 100%야!!!");
 } 
@@ -33,7 +31,5 @@ replier.reply((Math.floor(Math.random() * 2) ? "앗! " : "우왕! ") + sender + 
 if (rand > 3800) {
 replier.reply((Math.floor(Math.random() * 2) ? "옹! " : "오호! ") + sender + " 친구의 운세는 " + dice2 + "%가 나왔엉~d2");
 }
-  
 }
-
 }
