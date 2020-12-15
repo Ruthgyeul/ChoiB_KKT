@@ -105,9 +105,9 @@ preMsg[room] = msg;
 
 if (CH.isValidSender(sender) && CH.isValidWrite(msg)) {
 if (msg.length(1)) {
-CH.study(room, msg); 
-} else {
 null;
+} else {
+CH.study(room, msg); 
 }
 }
 
