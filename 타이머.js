@@ -1,5 +1,4 @@
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
-
 if (sender == "R. 체른" || sender == "체온 05 남 🇺🇸" || sender == "난 정상 체온인데? 05 남 🇺🇸") {
 if (msg.indexOf("!타이머초")==0){
 let num=Number(msg.split(" ")[1].replace(/[^0-9]/g,""));
@@ -31,5 +30,4 @@ java.lang.Thread.sleep(num*60000);
 replier.reply(sender + "의 " + num + "분이 끝났다구~"); 
 }
 }
-  
 } 
