@@ -5,8 +5,8 @@ const entrance = true; // 입장 감지 후 메시지를 보낼 지, 보내지 �
 const walkout = true; // 퇴장 감지 후 메시지를 보낼 지, 보내지 않을 지 결정합니다. true일 경우 메시지를 보내고, false일 경우 메시지를 보내지 않습니다.
 const showChange = true; // 인원수 변동을 표시할 지, 표시하지 않을 지 결정합니다. true일 경우 표시하고, false일 경우 표시하지 않습니다.
 
-const e_msg = "뉴페뉴페 공지공지 닉변닉변 방핱방핱"; // 입장 감지 후 보낼 메시지입니다.
-const w_msg = "ㅈㄱ"; // 퇴장 감지 후 보낼 메시지입니다.
+const e_msg = "뉴페뉴페 공지공지 닉변닉변 방핱방핱"; // 입장 감지 후 보낼 메시지
+const w_msg = "ㅈㄱ"; // 퇴장 감지 후 보낼 메시지
 
 function getRoomInfo(RoomId) {
 return JSON.parse(Jsoup.connect("https://api.develope.kr/search/room?room=https://open.kakao.com/o/" + RoomId).ignoreContentType(true).get().text()).result;
