@@ -1,7 +1,7 @@
 const CH = {}; 
 
 CH.say = function(msg, replir) {
-if (Math.floor(Math.random() * 11) == 0) { //9% 확률
+if (Math.floor(Math.random() * 10) == 0) { //10% 확률
 replier.reply(msg); 
 } else {
 null;
@@ -39,7 +39,7 @@ if (msg.indexOf("배고파")==0) {
 CH.say("앜!!! 밥 먹어!!! 귀찮다고 안먹지 말고 먹어!!!!",replier);
 }
   
-if (msg.indexOf("권남")==0 || msg.indexOf("권력")==0) {
+if (msg.indexOf("권남")==0 || msg.indexOf("권력")==0 || msg.indexOf("부방")==0) {
 CH.say("권남 쩔더라~ㅋ",replier);
 }
   
@@ -51,11 +51,11 @@ if (msg.indexOf("ㅎㅇ")==0 || msg.indexOf("안냥")==0 || msg.indexOf("안뇽"
 CH.say("ㅂㅇ~!",replier);
 }
   
-if (msg == "ㅈㄱ") {
+if (msg == "ㅈㄱ" || msg == "잘가") {
 CH.say("빠잉~!",replier);
 }
   
-if (msg.indexOf("학교")==0 || msg.indexOf("수업")==0 || msg.indexOf("숙제")==0 || msg.indexOf("과제")==0) {
+if (msg.indexOf("학교")==0 || msg.indexOf("수업")==0 || msg.indexOf("숙제")==0 || msg.indexOf("과제")==0 || msg.indexOf("강의")==0 || msg.indexOf("싸강")==0 || msg.indexOf("온강")==0) {
 CH.say("앜ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",replier);
 }
   
