@@ -1,7 +1,7 @@
 const CH = {}; 
 
 CH.say = function(msg, replir) {
-if (Math.floor(Math.random() * 10) == 0) { //10% 확률
+if (Math.floor(Math.random() * 10) == 0) { // 10% 확률
 replier.reply(msg); 
 } else {
 null;
