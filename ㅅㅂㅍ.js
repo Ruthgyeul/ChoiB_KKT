@@ -1,7 +1,7 @@
 var chatCount = {};
 
 function response(room, msg, sender, isGroupChat, _replier, ImageDB) {
-if (room == "지구b" || room == "오리b") {
+if (room.indexOf("b")) {
 
 var replier = {};
 
