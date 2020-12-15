@@ -1,7 +1,3 @@
-if (msg.indexOf(".")==0) {
-msg = msg.replace(/./,"");
-let jsondata = {"request":{"query": msg}};
-
 function send() {
 try {
 let url = new java.net.URL("https://builder.pingpong.us/api/builder/5e1a1c75e4b010b663d37764/integration/v0.2/custom/{sessionId}");
@@ -37,4 +33,10 @@ return "에러: " + e;
 }
 let results = JSON.parse(send());
 replier.reply(results["response"]["replies"][0]["text"]);
+}
+
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
+if (msg.indexOf(".")==0) {
+msg = msg.replace(/./,"");
+let jsondata = {"request":{"query": msg}};
 }
