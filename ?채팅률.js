@@ -3,7 +3,6 @@
 //닉네임 텍스트로 분석하니 닉넴 변경시 채팅률 자료도 증발
 //차후 imageDB 사용하여 프로필 id로 분리 예정
 
-
 const sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath(); 
 const CH = {}; 
 const DB = {}; 
