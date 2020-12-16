@@ -111,7 +111,7 @@ CH.study(room, msg);
 }
 }
 
-var noReply = ["/", "!"];
+var noReply = ["/", "!", "최빈아"];
 for (var n = 0; n < noReply.length; n++) {
 if (msg.startsWith(noReply[n])) return;
 }
