@@ -104,14 +104,14 @@ return;
 preMsg[room] = msg;
 
 if (CH.isValidSender(sender) && CH.isValidWrite(msg)) {
-if (msg.length(1)) {
+if (msg.substring(1)) {
 null;
 } else {
 CH.study(room, msg); 
 }
 }
 
-var noReply = ["/", "!운세", "!기기정보", "!주사위", "!타이머", "!타이머초", "!타이머분", "!한강물", "!쌉소리", "!코로나", "!채팅", "!수학게임", "!인스타", "!핑퐁", "!계산게임", "!연산게임"];
+var noReply = ["/", "!"];
 for (var n = 0; n < noReply.length; n++) {
 if (msg.startsWith(noReply[n])) return;
 }
@@ -134,7 +134,7 @@ CH.say(chat, replier);
 }
 }
 
-if (msg == "!쌉소리") {
+if (msg == "$쌉소리") {
 var data = DB.readData(room); 
 var datal = data.split("\n").length; 
 CH.say("난 지금껏 총 " + datal + "개의 채팅을 배웠어.", replier);
