@@ -17,10 +17,10 @@ answerForCalcQuiz = Num1 + Num2;
 } else {
 answerForCalcQuiz = Num1 * Num2;
 }
-replier.reply("문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?");
+replier.reply("문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?\n\n명령어: !정답 (숫자)");
 getCalcQuizOn = 1;
 } else {
-replier.reply("현재 진행 중인 게임이 있습니다.\n(초기화: !수학게임초기화)");
+replier.reply("현재 진행 중인 게임이 있습니다.\n초기화 명령어: !수학게임초기화");
 }
 }
 
