@@ -8,12 +8,12 @@
 ## Open API
 - 한강물 - http://hangang.dkserver.wo.tc
 - 코로나 - http://ncov.mohw.go.kr
-- 단톡 입퇴장 - https://api.develope.kr/search/room?room=https://open.kakao.com/o/
+- Develop.Kr - https://docs.develope.kr
 - Naver – https://developers.naver.com
-- PingPong - https://
+- PingPong - https://builder.pingpong.us
 - Android - https://developer.android.com
 - Kakao - https://developers.kakao.com/features/kakao
-- Evernote - https://dev.evernote.com/
+- Evernote - https://dev.evernote.com
 - Mozilla - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ## Copyright
