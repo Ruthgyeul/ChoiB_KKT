@@ -1,38 +1,37 @@
-var msgSenderForCalcQuiz = null; // 참여자
-var getCalcQuizOn = null; // 수학게임 작동
-var answerForCalcQuiz = null; // 문제의 답
+var msgSenderForCalcQuiz = null; 
+var getCalcQuizOn = null; 
+var answerForCalcQuiz = null;
 
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
 
-if (msg == "!수학게임" || msg == "!연산게임" || msg == "!계산게임") {
+if (msg == "!수학게임") {
 if (msgSenderForCalcQuiz == null) {
 msgSenderForCalcQuiz = sender;
-
 var Num1 = Math.floor(Math.random() * 100 + 1);
 var Num2 = Math.floor(Math.random() * 100 + 1);
-var calcItem = ["+", "+", "+", "+", "×"]
+var calcItem = ["+", "+", "+", "×", "×"]
 var calcItemRandom = Math.floor(Math.random() * 5);
 var calcItemToUse = calcItem[calcItemRandom];
-if (calcItemRandom <= 4) {
+if (calcItemRandom <= 3) {
 answerForCalcQuiz = Num1 + Num2;
 } else {
 answerForCalcQuiz = Num1 * Num2;
 }
-
-replier.reply(sender + ", 문제 내어 주도록 하지.\n\n문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?");
+replier.reply(sender + ", 문제다.\n\n문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?");
 getCalcQuizOn = 1;
 } else {
-replier.reply(sender + " 친구? 순서를 지켜요~");
+replier.reply("현재 진행 중인 게임이 있습니다.\n(초기화: !수학게임초기화)");
 }
 }
 
-if ((sender == msgSenderForCalcQuiz) && (getCalcQuizOn == 1) && (msg != "!수학게임" || msg != "!연산게임" || msg != "!계산게임")) {
-msgSenderForCalcQuiz = null;
-if (msg == answerForCalcQuiz) {
+if (msg.startsWith("!정답")) {
+var asw = Number(msg.split(" ")[1].replace(/[^0-9]/g,""));
+if (asw == answerForCalcQuiz) {
 replier.reply(sender + " 친구, 정답이야!");
 } else {
 replier.reply("헐.. " + sender + " 이샛끼 이것도 계산 못하누ㅋ!");
 }
+msgSenderForCalcQuiz = null;
 answerForCalcQuiz = null;
 getCalcQuizOn = null;
 }
