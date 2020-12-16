@@ -5,7 +5,7 @@ try {
 let data = Utils.getWebText("http://ncov.mohw.go.kr");
 let nraw = data.split("실시간 집계현황")[1].split("help_info")[0].split("<li>");
 let distraw = data.split("\"rpsam_graph\">")[1].split("<svg")[0];
-let nationwide = "[대한민국 코로나 현황]\n";
+let nationwide = "[대한민국 코로나 현황]\n\n";
 let district = "";
 let list = "";
 for (let i = 1; i < nraw.length; i++) {
@@ -17,7 +17,7 @@ nationwide += "\n";
 }
 nationwide += title + ": " + num + "명 " + before;
 if (i % 2 != 0) {
-nationwide ";
+nationwide += "\n";
 }
 }
 for (let i = 1; list = distraw.split("map_city" + i + "\">")[1]; i++) {
@@ -30,7 +30,7 @@ title = "해외감염";
 if (i != 1) {
 district += "\n";
 }
-district += title + " 확진자: " + num + "명 " + before;
+district += title + ": " + num + "명 " + before;
 }
 let korcov = nationwide;
 let kordis = "[지역별 코로나 현황]" + Utils.compress() + "\n\n" + district;
