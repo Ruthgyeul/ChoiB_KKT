@@ -12,11 +12,11 @@ return datestr + " " + timestr;
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
 
 if (msg == "!세계시간") {
-replier.reply("[세계시간]" + Utils.compress() + "\n\n\n[대한민국]\n" + Time(1, -12) + "\n\n[미서부]\n" + Time(0, -1) + "\n\n[미중부]\n" + Time(0, 0) + "\n\n[미동부]\n" + Time(0, 1) + "\n\n[프랑스]\n" + Time(0, 7));
+replier.reply("[세계시간]" + Utils.compress() + "\n\n\n[대한민국]\n" + Time(1, -9) + "\n\n[미서부]\n" + Time(0, -1) + "\n\n[미중부]\n" + Time(0, 0) + "\n\n[미동부]\n" + Time(0, 1) + "\n\n[프랑스]\n" + Time(0, 7));
 }
  
 if (msg == "!한국시간") {
-replier.reply("[한국시간]\n" + Time(1, -12));
+replier.reply("[한국시간]\n" + Time(1, -9));
 }
  
 if (msg == "!미국시간") {
