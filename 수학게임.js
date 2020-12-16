@@ -17,7 +17,7 @@ answerForCalcQuiz = Num1 + Num2;
 } else {
 answerForCalcQuiz = Num1 * Num2;
 }
-replier.reply(sender + ", 문제다.\n\n문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?");
+replier.reply("문제: " + Num1 + " " + calcItemToUse + " " + Num2 + " = ?");
 getCalcQuizOn = 1;
 } else {
 replier.reply("현재 진행 중인 게임이 있습니다.\n(초기화: !수학게임초기화)");
