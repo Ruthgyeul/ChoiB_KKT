@@ -11,7 +11,7 @@ replier.reply("스테이지를 선택해주세요!\n\n!수학게임1 = n + n\n!�
 if (msg == "!수학게임1") {
 if (msgSenderForCalcQuiz == null) {
 msgSenderForCalcQuiz = sender;
-var Num1 = Math.floor(Math.random() * 100 + 1);
+var Num1 = Math.floor(Math.random() * 1000 + 1);
 var Num2 = Math.floor(Math.random() * 100 + 1);
 answerForCalcQuiz = Num1 + Num2;
 replier.reply("문제: " + Num1 + " + " + Num2 + " = ?\n\n명령어: !정답 (숫자)");
@@ -24,8 +24,8 @@ replier.reply("현재 진행 중인 게임이 있습니다.\n초기화 명령어
 if (msg == "!수학게임2") {
 if (msgSenderForCalcQuiz == null) {
 msgSenderForCalcQuiz = sender;
-var Num1 = Math.floor(Math.random() * 100 + 1);
-var Num2 = Math.floor(Math.random() * 10 + 1);
+var Num1 = Math.floor(Math.random() * 1000 + 100);
+var Num2 = Math.floor(Math.random() * 100 + 1);
 answerForCalcQuiz = Num1 - Num2;
 replier.reply("문제: " + Num1 + " - " + Num2 + " = ?\n\n명령어: !정답 (숫자)");
 getCalcQuizOn = 1;
