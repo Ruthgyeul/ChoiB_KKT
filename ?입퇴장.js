@@ -1,6 +1,9 @@
 importClass(org.jsoup.Jsoup);
 
-const rooms = [["RoomName", "RoomId", 0]]; // ["방 이름", "방 아이디", 0]
+const rooms = [["삐약b", "g53tndHc", 0], ["지구b", "gkzMG6Ic", 0], ["하트b", "gSE7VOsc", 0]]; // ["방 이름", "방 아이디", 0]
+const
+const
+const
 const entrance = true; // 입장 감지 후 메시지를 보낼 지, 보내지 않을 지 결정합니다. true일 경우 메시지를 보내고, false일 경우 메시지를 보내지 않습니다.
 const walkout = true; // 퇴장 감지 후 메시지를 보낼 지, 보내지 않을 지 결정합니다. true일 경우 메시지를 보내고, false일 경우 메시지를 보내지 않습니다.
 const showChange = true; // 인원수 변동을 표시할 지, 표시하지 않을 지 결정합니다. true일 경우 표시하고, false일 경우 표시하지 않습니다.
@@ -37,8 +40,8 @@ const loop = setInterval(function() {
 try {
 enter(entrance, walkout, showChange);
 }
-catch (e) {
-return "에러: " + e;
+catch (er) {
+return "에러: " + er;
 }
 }, 750);
 
