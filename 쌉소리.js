@@ -125,7 +125,7 @@ CH.say(chat, replier);
 }
 }
   
-if (room == "오리b") {
+if (room == "삐약b") {
 if ((Math.floor(Math.random() * 5)) == 0) {
 var chat = CH.getRandomChat(room);
 if (chat != null && CH.isValidData(chat)) {
