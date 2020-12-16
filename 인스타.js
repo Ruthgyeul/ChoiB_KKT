@@ -25,6 +25,7 @@ replier.reply(["• " + full_name + " (@" + nick + ")", Ll, biography, Ll, "팔�
 } else {
 replier.reply(["• " + full_name + " (@" + nick + ")", Ll, biography, Ll, "팔로워: " + edge_followed_by.count + "명", "팔로잉: " + edge_follow.count + "명", Ll + Lw, "• 프로필 사진\n", profile_pic_url_hd, Ll].join("\n"));
 }
+}
 } catch (e) {
 replier.reply("존재하지 않는 프로필입니다!\n에러: " + e);
 }
