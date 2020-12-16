@@ -20,7 +20,7 @@ let likes = info2.edge_liked_by.count;
 let comments = info2.edge_media_to_comment.count;
 return ["대표 사진", url, text, likes + "❤️" + " ".repeat(3) + comments + "💬"].join('\n\n');
 }).join('\n\n'+Ll+'\n\n');
-replier.reply(["• " + full_name + " 님의 인스타그램", Ll, full_name + " @" + nick, biography, Ll, "팔로워: " + edge_followed_by.count + "명", "팔로잉: " + edge_follow.count + "명", Ll + Lw, "• 프로필 사진\n", profile_pic_url_hd, "\n", Ll, "• 게시물\n" + articles + "\n" , Ll].join("\n"));
+replier.reply(["• " + full_name + " 님의 인스타그램", Ll, full_name + " @" + nick + "\n", biography, Ll, "팔로워: " + edge_followed_by.count + "명", "팔로잉: " + edge_follow.count + "명", Ll + Lw, "• 프로필 사진\n", profile_pic_url_hd, Ll, "• 게시물\n" + articles, Ll].join("\n"));
 }
 } catch (e) {
 replier.reply("존재하지 않는 프로필입니다!\n(!인스타 (@ 제외한 아이디))");
