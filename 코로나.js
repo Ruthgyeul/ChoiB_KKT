@@ -30,7 +30,7 @@ title = "해외감염";
 if (i != 1) {
 district += "\n";
 }
-district += title + ": " + num + "명 " + before;
+district += title + " 확진자: " + num + "명 " + before;
 }
 let korcov = nationwide;
 let kordis = "[지역별 코로나 현황]" + Utils.compress() + "\n\n" + district;
