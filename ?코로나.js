@@ -75,7 +75,7 @@ district += title + ": " + num + "명 " + before;
 }
 
 replier.reply(nationwide);
-replier.reply("💉 지역별 코로나 현황 💉" + COMPRESS + "\n\n" + district);
+replier.reply("💉 지역별 코로나 현황 💉" + Utils.compress() + "\n\n" + district);
 }
 
 }
