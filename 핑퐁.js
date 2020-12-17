@@ -55,15 +55,22 @@ replier.reply(results['response']['replies'][0]['text']);
 }
 
 if (room == "지구b" && isValidMsg(msg)) {
-if (Math.floor(Math.random() * 6) == 0) {
 let results = JSON.parse(send(msg));
+if (Math.floor(Math.random() * 4) == 0) {
 replier.reply(results['response']['replies'][0]['text']);
 }
 }
   
 if (room == "삐약b" && isValidMsg(msg)) {
-if (Math.floor(Math.random() * 7) == 0) {
 let results = JSON.parse(send(msg));
+if (Math.floor(Math.random() * 5) == 0) {
+replier.reply(results['response']['replies'][0]['text']);
+}
+}
+
+if (room == "하트b" && isValidMsg(msg)) {
+let results = JSON.parse(send(msg));
+if (Math.floor(Math.random() * 7) == 0) {
 replier.reply(results['response']['replies'][0]['text']);
 }
 }
