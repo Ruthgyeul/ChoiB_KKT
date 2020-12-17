@@ -37,7 +37,7 @@ return e;
 }
 
 function isValidMsg(msg) {
-var noValid = [".", "최빈", "최비", "빈", "비니", "/", "!"]; 
+var noValid = [".", "최빈", "최비", "빈", "비니", "/", "!", "\n", "이모티콘을 보냈습니다.", "이모티콘을", "사진을 보냈습니다.", "사진을", "동영상을 보냈습니다.", "동영상을", "음성메시지를 보냈습니다.", "음성메시지", "카카오톡 프로필", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", ".kr", ".org", "보이스톡", "페이스톡"]; 
 for (var n = 0; n < noValid.length; n++) { 
 if (msg.startsWith(noValid[n]) != -1) return false; 
 }
