@@ -8,7 +8,7 @@ let url = new java.net.URL("https://builder.pingpong.us/api/builder/5fd8cb7ae4b0
 let con = url.openConnection();
 con.setRequestMethod("POST");
 con.setRequestProperty("Content-Type", "application/json; charset=utf-8"); 
-con.setRequestProperty("Authorization", "Basic " + "a2V5OmNjMGE2MDcyM2UyZTI3NzA2MGQ4YzkyYWVhZjhiZGQ1"); 
+con.setRequestProperty("Authorization", "Basic a2V5OmNjMGE2MDcyM2UyZTI3NzA2MGQ4YzkyYWVhZjhiZGQ1"); 
 con.setRequestProperty("User-Agent", "Mozilla"); 
 con.setRequestProperty("Accpet", "*.*"); 
 con.setDoOutput(true);
