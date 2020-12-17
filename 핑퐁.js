@@ -37,7 +37,7 @@ return e;
 }
 
 function isValidMsg(msg) {
-var noValid = [".", "최빈", "최비", "빈", "비니"]; 
+var noValid = [".", "최빈", "최비", "빈", "비니", "/", "!"]; 
 for (var n = 0; n < noValid.length; n++) { 
 if (msg.startsWith(noValid[n]) != -1) return false; 
 }
