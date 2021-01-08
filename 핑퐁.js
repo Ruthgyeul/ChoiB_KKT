@@ -13,6 +13,7 @@ try {
   con.setDoOutput(true);
   let wr = new java.io.DataOutputStream(con.getOutputStream());
   let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
+  let jsondata = { "request": { "query": Idata } };
   writer.write(JSON.stringify(jsondata));
   writer.close();
   wr.close();
@@ -89,8 +90,3 @@ replier.reply(results['response']['replies'][0]['text']);
 }
   
 }
-
-
-
-
-
