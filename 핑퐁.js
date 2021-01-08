@@ -3,6 +3,7 @@ const AuthID = "Basic a2V5OmNjMGE2MDcyM2UyZTI3NzA2MGQ4YzkyYWVhZjhiZGQ1";
 
 function send(Idata) {
 try {
+let jsondata = { "request": { "query": Idata } }; 
 let url = new java.net.URL("https://builder.pingpong.us/api/builder/5e1a1c75e4b010b663d37764/integration/v0.2/custom/{sessionId}");
 let con = url.openConnection();
 con.setRequestMethod("POST"); // 서버 접속 방법을 설정하세요. GET, POST, OPTIONS 등..
@@ -13,7 +14,6 @@ con.setRequestProperty("Accpet", "*.*"); // 일부 사이트의 경우, 이 헤�
 con.setDoOutput(true);
 let wr = new java.io.DataOutputStream(con.getOutputStream());
 let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
-let jsondata = { "request": { "query": { Idata } } }; 
 writer.write(JSON.stringify(jsondata));
 writer.close();
 wr.close();
