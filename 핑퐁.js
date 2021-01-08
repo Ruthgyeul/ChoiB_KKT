@@ -31,7 +31,7 @@ try {
     response += inputLine;
   }
   br.close();
-  return response;
+  return JSON.parse(response);
 } catch (e) {
   replier.reply(e);
 }
@@ -58,7 +58,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName)
 if (room.indexOf("b")) {
 if (msg.startsWith(".") || msg.startsWith("최빈") || msg.startsWith("최비") || msg.startsWith("빈") || msg.startsWith("비니")) {
 msg = msg.replace(/./,"");
-let results = JSON.parse(send(msg));
+let results = send(msg);
 replier.reply(results['response']['replies'][0]['text']);
 } 
 }
