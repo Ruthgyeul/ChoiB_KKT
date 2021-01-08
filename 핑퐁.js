@@ -13,7 +13,7 @@ con.setRequestProperty("Accpet", "*.*"); // 일부 사이트의 경우, 이 헤�
 con.setDoOutput(true);
 let wr = new java.io.DataOutputStream(con.getOutputStream());
 let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
-let jsondata = { "request": { "query": Idata } };
+let jsondata = { "request": { "query": { Idata } } }; 
 writer.write(JSON.stringify(jsondata));
 writer.close();
 wr.close();
