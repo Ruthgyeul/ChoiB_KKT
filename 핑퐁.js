@@ -4,15 +4,13 @@ const CH = {};
 
 CH.say = function(msg, replier) {
 replier.reply(msg);
-}
+};
 
 CH.rsay = function(R, msg, replier) {
 if (Math.floor(Math.random() * Number(R)) == 0) {
 replier.reply(msg);
-} else {
-null;
 }
-}
+};
 
 CH.send = function(Idata) {
 try {
