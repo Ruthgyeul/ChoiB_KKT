@@ -89,8 +89,4 @@ let results = JSON.parse(CH.send(msg));
 CH.rsay(5, results['response']['replies'][0]['text'],replier);
 }
   
-if (sender.indexOf("체온") && msg == "!테스트P") {
-CH.say("[PingPong API]\n\n" + CH.send("테스트"),replier);
-}
-  
 }
