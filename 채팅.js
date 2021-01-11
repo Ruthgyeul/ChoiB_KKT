@@ -30,7 +30,7 @@ replier.reply("『 📢 채팅 레벨 UP! 』\n\n" + sender + "님의 레벨\n" 
 FS.write(path2, JSON.stringify(lv));
 
 if (msg == "!levels" || msg == "!level") {
-replier.reply("『 📢 " + room + " Rank 』" + "\u200b".repeat(500) + "\nTotal Chat : " + total + " 100%\n" + "═".repeat(20) + "\n\n" + chat.sort((a,b)=>b.count-a.count).slice(0,150).map((e,i)=>++i + "위 [" + lv[sender].lv + "LV, " + e.count + "회, " + (e.count/total*100).toFixed(2) + "%] : " + e.name).join('\n\n') + "\n\n" + "═".repeat(20));
+replier.reply("『 📢 " + room + " Rank 』" + "\nTotal Chat : " + total + " 100%" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + chat.sort((a,b)=>b.count-a.count).slice(0,150).map((e,i)=>++i + "위 [" + lv[sender].lv + "LV, " + e.count + "회, " + (e.count/total*100).toFixed(2) + "%] : " + e.name).join('\n\n') + "\n\n" + "═".repeat(20));
 }
 
 if (msg=="!rank") {
