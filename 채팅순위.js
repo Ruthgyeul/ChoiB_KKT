@@ -1,6 +1,6 @@
 //[출처] 채팅순위 (카카오톡 봇 커뮤니티) | 작성자 Jwon0423
 
-const FS = FileStream, path = '/sdcard/chat.json';
+const FS = FileStream, path = "/sdcard/채팅/chat.json";
 if(!new java.io.File(path).canRead()) FS.write(path, '[]');
 let chat = JSON.parse(FS.read(path));
 
