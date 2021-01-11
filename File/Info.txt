@@ -18,3 +18,6 @@ https://cafe.naver.com/nameyee?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D2
 
 [ 채팅 레벨 ]
 https://cafe.naver.com/nameyee?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D29537083%2526page%3D2%2526menuid%3D143%2526boardtype%3DL%2526articleid%3D28939%2526referrerAllArticles%3Dfalse
+
+[ 유니 코드]
+https://wepplication.github.io/tools/
