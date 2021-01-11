@@ -34,7 +34,7 @@ replier.reply("『 📢 " + room + " Rank 』" + "\nTotal Chat : " + total + " 1
 }
 
 if (msg=="!rank") {
-replier.reply("『 📢 " + sender + " 정보 』" + "\n" + "═".repeat(12) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 레벨 : " + lv[sender].lv + "LV\n『🏅』 채팅수 : " + chat[index].count + "회\n" + "═".repeat(12));
+replier.reply("『 📢 " + sender + " 정보 』" + "\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 레벨 : " + lv[sender].lv + "LV\n『🏅』 채팅수 : " + chat[index].count + "회\n" + "═".repeat(15));
 }
   
 }
