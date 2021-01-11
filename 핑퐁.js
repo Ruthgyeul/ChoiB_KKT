@@ -86,15 +86,15 @@ CH.say(msg, replier);
 }
   
 if (room == "지구b" && CH.isValidMsg(msg)) {
-CH.rsay(4, msg,replier);
+CH.rsay(4, msg, replier);
 }
   
 if (room == "삐약b" && CH.isValidMsg(msg)) {
-CH.rsay(5, msg,replier);
+CH.rsay(5, msg, replier);
 }
   
 if (room == "요정b" && CH.isValidMsg(msg)) {
-CH.rsay(6, msg,replier);
+CH.rsay(6, msg, replier);
 }
 
 }
