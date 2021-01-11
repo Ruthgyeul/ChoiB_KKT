@@ -10,7 +10,7 @@ let lv = JSON.parse(FS2.read(path2));
 
 function response(room, msg, sender, igc, replier){
 
-if (room.indexOf("b") {
+if (room.indexOf("b")) {
 
 if (!chat.find(e=>e.name==sender)) chat.push({'name':sender, 'count':1});
 chat[chat.findIndex(e=>e.name==sender)].count++;
