@@ -3,12 +3,20 @@ const AuthID = "Basic a2V5OmNjMGE2MDcyM2UyZTI3NzA2MGQ4YzkyYWVhZjhiZGQ1";
 const CH = {};
 
 CH.say = function(msg, replier) {
-replier.reply(msg);
+let RData = CH.send(msg);
+RData.replace(/\n/gi, '\n');
+RData.replace(/\r/gi, '\r');
+let results = JSON.parse(RData);
+replier.reply(results['response']['replies'][0]['text']);
 };
 
 CH.rsay = function(R, msg, replier) {
+let RData = CH.send(msg);
+RData.replace(/\n/gi, '\n');
+RData.replace(/\r/gi, '\r');
+let results = JSON.parse(RData);
 if (Math.floor(Math.random() * Number(R)) == 0) {
-replier.reply(msg);
+replier.reply(results['response']['replies'][0]['text']);
 }
 };
 
@@ -48,7 +56,6 @@ return e;
 }
 };
 
-/*
 CH.isValidMsg = function(Data) {
 var noValid = [".", "최빈", "최비", "빈", "비니", "/", "!", "이모티콘을 보냈습니다.", "이모티콘을", "사진을 보냈습니다.", "사진을", "동영상을 보냈습니다.", "동영상을", "음성메시지를 보냈습니다.", "음성메시지", "카카오톡 프로필", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", ".kr", ".org", "보이스톡", "페이스톡"]; 
 for (var n = 0; n < noValid.length; n++) { 
@@ -64,36 +71,26 @@ if (Data.startsWith(noValid[n]) != -1) return false;
 }
 return true;
 };
-*/
 
 function response(room, msg, sender, isGroupChat, replier) { 
 
 if (room.indexOf("b")) {
 if (msg.startsWith(".") || msg.startsWith("최빈") || msg.startsWith("최비") || msg.startsWith("빈") || msg.startsWith("비니")) {
 msg = msg.replace(/./,"");
-let RData = CH.send(msg);
-RData.replace(/\n/gi, '\n');
-RData.replace(/\r/gi, '\r');
-let results = JSON.parse(RData);
-CH.say(results['response']['replies'][0]['text'],replier);
+CH.say(msg, replier);
 } 
 }
 
-/*
 if (isGroupChat == false && CH.isValidSys(msg)) {
-let results = JSON.parse(CH.send(msg));
-CH.say(results['response']['replies'][0]['text'],replier);
+CH.say(msg, replier);
 }
   
 if (room == "지구b" && CH.isValidMsg(msg)) {
-let results = JSON.parse(CH.send(msg));
-CH.rsay(4, results['response']['replies'][0]['text'],replier);
+CH.rsay(4, msg,replier);
 }
   
 if (room == "삐약b" && CH.isValidMsg(msg)) {
-let results = JSON.parse(CH.send(msg));
-CH.rsay(5, results['response']['replies'][0]['text'],replier);
+CH.rsay(5, msg,replier);
 }
-*/
 
 }
