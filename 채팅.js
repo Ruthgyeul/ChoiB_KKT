@@ -24,7 +24,7 @@ if (!lv[sender]) lv[sender] = {'lv':1, 'xp':0};
 if (lv[sender].xp>=75) {
 ++lv[sender].lv;
 lv[sender].xp -= 75;
-replier.reply("『 📢 채팅 레벨 UP! 』\n\n" + sender + "님의 레벨\n" + lv[sender].lv + "LV >> " + lv[sender].lv + "LV");
+replier.reply("『 📢 채팅 레벨 UP! 』\n" + sender + "님의 레벨\n" + lv[sender].lv + "LV >> " + lv[sender].lv + "LV");
 }
 
 FS.write(path2, JSON.stringify(lv));
