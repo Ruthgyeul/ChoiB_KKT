@@ -4,16 +4,16 @@ const CH = {};
 
 CH.say = function(msg, replier) {
 let RData = CH.send(msg);
-RData.replace(/\n/gi, '\n');
-RData.replace(/\r/gi, '\r');
+RData.replace(/\n/gi, "\n");
+RData.replace(/\r/gi, "\r");
 let results = JSON.parse(RData);
 replier.reply(results['response']['replies'][0]['text']);
 };
 
 CH.rsay = function(R, msg, replier) {
 let RData = CH.send(msg);
-RData.replace(/\n/gi, '\n');
-RData.replace(/\r/gi, '\r');
+RData.replace(/\n/gi, "\n");
+RData.replace(/\r/gi, "\r");
 let results = JSON.parse(RData);
 if (Math.floor(Math.random() * Number(R)) == 0) {
 replier.reply(results['response']['replies'][0]['text']);
@@ -91,6 +91,10 @@ CH.rsay(4, msg,replier);
   
 if (room == "삐약b" && CH.isValidMsg(msg)) {
 CH.rsay(5, msg,replier);
+}
+  
+if (room == "요정b" && CH.isValidMsg(msg)) {
+CH.rsay(6, msg,replier);
 }
 
 }
