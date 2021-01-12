@@ -65,7 +65,7 @@ if (Math.random() * 100 << 0 > (99 - Pro[room])) {
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
 
-send = function() {
+function send() {
 try{
 let url = new java.net.URL(AuthURL);
 let con = url.openConnection();
@@ -108,7 +108,7 @@ msg = msg.replace(/./,"");
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
 
-send {
+function send() {
 try{
 let url = new java.net.URL(AuthURL);
 let con = url.openConnection();
