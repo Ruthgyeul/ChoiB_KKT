@@ -5,7 +5,7 @@ const On = {};
 const Pro = {};
 
 CH.Admin = function(sender) {
-var Admin = ["체온", "가현", "니셜", "리보", "땃쥐"]; 
+var Admin = ["체온", "가현", "니셜", "리보", "땃쥐", "Choi"]; 
 for (var n = 0; n < Admin.length; n++) { 
 if (sender.indexOf(Admin[n]) != -1) return true; 
 }
@@ -117,6 +117,7 @@ con.setRequestProperty("Content-Type", "application/json; charset=utf-8"); //서
 con.setRequestProperty("Authorization", "Basic " + AuthID); //인증키 입력
 con.setRequestProperty("User-Agent", "Mozilla"); //일부의 경우, User-Agent를 요구
 con.setRequestProperty("Accpet", "*.*"); //일부의 경우, 이 헤더가 없으면 오류가 발생
+//con.setRequestProperty("ServerAset". "#200"); //Server connection #200
 con.setDoOutput(true);
 let wr = new java.io.DataOutputStream(con.getOutputStream());
 let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
