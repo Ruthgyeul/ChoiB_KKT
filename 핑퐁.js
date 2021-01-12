@@ -49,11 +49,11 @@ send = _ => {
 try{
 let url = new java.net.URL(AuthURL);
 let con = url.openConnection();
-con.setRequestMethod("POST"); // 서버 접속 방법을 설정하세요. GET, POST, OPTIONS 등..
-con.setRequestProperty("Content-Type", "application/json; charset=utf-8"); // 서버 접속시 가져올 데이터의 형식을 지정
-con.setRequestProperty("Authorization", "Basic " + AuthID); // 인증키 입력. 사이트에 따라 Basic 또는 Bearer 를 사용합니다.
-con.setRequestProperty("User-Agent", "Mozilla"); // 일부 사이트의 경우 User-Agent 를 요구합니다.
-con.setRequestProperty("Accpet", "*.*"); // 일부 사이트의 경우, 이 헤더가 없으면 오류가 발생합니다.
+con.setRequestMethod("POST"); 
+con.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+con.setRequestProperty("Authorization", "Basic " + AuthID); 
+con.setRequestProperty("User-Agent", "Mozilla");
+con.setRequestProperty("Accpet", "*.*"); 
 con.setDoOutput(true);
 let wr = new java.io.DataOutputStream(con.getOutputStream());
 let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
