@@ -10,7 +10,7 @@ if (!Pro[room]) Pro[room] = 0;
 
 if (msg == "!Talk On") {
 On[room] = true;
-replier.reply("[Bot]\nRoom : " + room + "\nTalk : On");
+replier.reply("[ChoiB]\nRoom : " + room + "\nTalk : On");
 return;
 }
 
@@ -18,7 +18,7 @@ if (!On[room]) return;
 
 if (msg == "!Talk Off") {
 On[room] = false;
-replier.reply("[Bot]\nRoom : " + room + "\nTalk : Off");
+replier.reply("[ChoiB]\nRoom : " + room + "\nTalk : Off");
 return;
 }
 
