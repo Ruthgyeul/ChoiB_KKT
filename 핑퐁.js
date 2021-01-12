@@ -33,7 +33,8 @@ return;
 } else if (CH.Admin(sender) == false) {
 replier.reply("[Project K]\n\n관리진 전용 명령어입니다.\n관리진 등록이 되어 있지 않아,\n해당 명령어 실행이 불가합니다.");
 }
-  
+}
+
 if (!On[room]) return;
 
 if (msg == "!Talk Off") {
@@ -43,6 +44,7 @@ replier.reply("[Project K]\nRoom : " + room + "\nTalk : Off");
 return;
 } else if (CH.Admin(sender) == false) {
 replier.reply("[Project K]\n\n관리진 전용 명령어입니다.\n관리진 등록이 되어 있지 않아,\n해당 명령어 실행이 불가합니다.");
+}
 }
 
 if (msg.startsWith("!Talk ")) {
@@ -56,13 +58,14 @@ return;
 } else if (CH.Admin(sender) == false) {
 replier.reply("[Project K]\n\n관리진 전용 명령어입니다.\n관리진 등록이 되어 있지 않아,\n해당 명령어 실행이 불가합니다.");
 }
+}
 
 if (CH.isValidMsg(msg)) {
 if (Math.random() * 100 << 0 > (99 - Pro[room])) {
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
 
-send {
+send = function() {
 try{
 let url = new java.net.URL(AuthURL);
 let con = url.openConnection();
