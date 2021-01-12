@@ -6,7 +6,7 @@ const On = {};
 const Pro = {};
 let User = "Basic a2V5OmNjMGE2MDcyM2UyZTI3NzA2MGQ4YzkyYWVhZjhiZGQ1"; //주어지는 api 키 그대로 복사해서 넣으세요
 
-response = (room, msg, sender, isGroupChat, replier) => {
+function response(room, msg, sender, isGroupChat, replier) {
 if (!On[room]) On[room] = false;
 
 if (!Pro[room]) Pro[room] = 0;
@@ -25,8 +25,8 @@ replier.reply("[Bot]\nRoom : " + room + "\nTalk : Off");
 return;
 }
 
-if (msg.startsWith("/Talk ")) {
-msg = msg.replace("/Talk ", "");
+if (msg.startsWith("!Talk ")) {
+msg = msg.replace("!Talk ", "");
 
 if (isNaN(msg)) return;
 
