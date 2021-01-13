@@ -8,6 +8,15 @@ if (msg.indexOf(Extra[n]) != -1) return true;
 return false;
 };
 
+CH.EsterEgg = function(msg) {
+var Egg = [""]; 
+for (var n = 0; n < Egg.length; n++) { 
+if (msg.indexOf(Egg[n]) != -1) return true; 
+}
+return false;
+};
+
+
 function response(room, msg, sender, igc, replier){
 
 const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/lv.json";
@@ -22,7 +31,7 @@ lv[lv.findIndex(e=>e.name==sender)].xp++;
 
 if (lv[lv.findIndex(e=>e.name==sender)].xp>=Number((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 55)) {
 lv[lv.findIndex(e=>e.name==sender)].lv++;
-lv[lv.findIndex(e=>e.name==sender)].xp = 0;
+lv[lv.findIndex(e=>e.name==sender)].xp -= ((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 35);
 FS.write(path, JSON.stringify(lv));
 replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/" + ((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 55) + " exp left]");
 }
@@ -31,10 +40,30 @@ if (msg == "이모티콘을 보냈습니다.") {
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
 if (CH.ExtraExp(msg)) {
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+FS.write(path, JSON.stringify(lv));
+}
+
+if (CH.EsterEgg(msg)) {
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
