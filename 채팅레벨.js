@@ -24,7 +24,7 @@ if (lv[lv.findIndex(e=>e.name==sender)].xp>=75) {
 lv[lv.findIndex(e=>e.name==sender)].lv++;
 lv[lv.findIndex(e=>e.name==sender)].xp -= 75;
 FS.write(path, JSON.stringify(lv));
-replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[sender].lv - 1) + " >> " + lv[sender].lv + "LV [" +  + "/75 exp left]");
+replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/75 exp left]");
 }
 
 if (msg == "이모티콘을 보냈습니다.") {
