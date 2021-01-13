@@ -20,15 +20,14 @@ lv.push({'name':sender, 'lv':1, 'xp':0});
 
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 
-if (lv[lv.findIndex(e=>e.name==sender)].xp>=125) {
+if (lv[lv.findIndex(e=>e.name==sender)].xp>=75) {
 lv[lv.findIndex(e=>e.name==sender)].lv++;
-lv[lv.findIndex(e=>e.name==sender)].xp -= 125;
+lv[lv.findIndex(e=>e.name==sender)].xp -= 75;
 FS.write(path, JSON.stringify(lv));
-replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[sender].lv - 1) + " >> " + lv[sender].lv + "LV [" +  + "/125 exp left]");
+replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[sender].lv - 1) + " >> " + lv[sender].lv + "LV [" +  + "/75 exp left]");
 }
 
 if (msg == "이모티콘을 보냈습니다.") {
-lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
@@ -42,17 +41,16 @@ lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 lv[lv.findIndex(e=>e.name==sender)].xp++;
-lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
 if (msg == "!Lrank") {
-replier.reply("『 🗣️ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*125)+b.xp)-((a.lv*125)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [" + e.lv + "LV, " + e.xp + "/125 exp left] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
+replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*75)+b.xp)-((a.lv*75)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [" + e.lv + "LV, " + e.xp + "/75 exp left] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
 if (msg == "!level" || msg == "levels") {
-let index = lv.sort((a,b)=>b.count-a.count).findIndex(e=>e.name==sender);
-replier.reply("『 🗣️ " + sender + " 』\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 레벨 : " + lv[index].lv + "LV\n『🏅』 남은 경험치 : " + lv[index].xp + "/125 exp\n" + "═".repeat(15));
+let index = lv.sort((a,b)=>((b.lv*75)+b.xp)-((a.lv*75)+a.xp)).findIndex(e=>e.name==sender);
+replier.reply("『 ⭐ " + sender + " 』\n" + "═".repeat(15) + "\n『🔥』 순위 : " + (index+1) + "위\n『🔥』 레벨 : " + lv[index].lv + "LV\n『🔥』 남은 경험치 : " + lv[index].xp + "/75 exp\n" + "═".repeat(15));
 }
 
 FS.write(path, JSON.stringify(lv));
