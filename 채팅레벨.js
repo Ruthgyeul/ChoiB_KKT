@@ -11,10 +11,13 @@ return false;
 function response(room, msg, sender, igc, replier){
 
 const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/lv.json";
-if(!new java.io.File(path).canRead()) FS.write(path, '{}');
+if(!new java.io.File(path).canRead()) FS.write(path, '[]');
 let lv = JSON.parse(FS.read(path));
 
-if (!lv.find(e=>e.name==sender)) lv.push({'name':sender, 'lv':1, 'xp':0});
+if (!lv.find(e=>e.name==sender)) {
+lv.push({'name':sender, 'lv':1, 'xp':0});
+}
+
 lv[lv.findIndex(e=>e.name==sender)].xp++;
 
 if (lv[lv.findIndex(e=>e.name==sender)].xp>=125) {
@@ -25,18 +28,26 @@ replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[sender].lv - 1
 }
 
 if (msg == "이모티콘을 보냈습니다.") {
-lv[lv.findIndex(e=>e.name==sender)].lv+3;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
 if (CH.ExtraExp(msg)) {
-lv[lv.findIndex(e=>e.name==sender)].lv++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
 if (msg == "!Lrank") {
-let total = lv.map(e=>e.count).reduce((a,b)=>a+b);
-replier.reply("『 🗣️ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>b.lv-a.lv).slice(0,150).map((e,i)=>++i + "위 [" + e.lv + "LV, " + e.xp + "/125 exp left] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
+replier.reply("『 🗣️ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>(b.lv*b.xp)-(a.lv*a.xp)).slice(0,150).map((e,i)=>++i + "위 [" + e.lv + "LV, " + e.xp + "/125 exp left] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
 if (msg == "!level" || msg == "levels") {
