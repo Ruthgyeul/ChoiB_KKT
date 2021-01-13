@@ -11,7 +11,7 @@ if (!On[room]) On[room] = false;
 
 if (!Pro[room]) Pro[room] = 0;
 
-if (msg == "/Talk On") {
+if (msg == "!Talk On") {
 On[room] = true;
 replier.reply("[Bot]\nRoom : " + room + "\nTalk : On");
 return;
@@ -19,7 +19,7 @@ return;
 
 if (!On[room]) return;
 
-if (msg == "/Talk Off") {
+if (msg == "!Talk Off") {
 On[room] = false;
 replier.reply("[Bot]\nRoom : " + room + "\nTalk : Off");
 return;
@@ -32,7 +32,7 @@ if (isNaN(msg)) return;
 
 if (msg < 0 || msg > 100) return;
 Pro[room] = msg;
-replier.reply("[Bot]\nRoom : " + room + "\nProbability : " + msg + "%"); 
+replier.reply("[Bot]\nRoom : " + room + "\nProbability : " + msg + "%");
 return;
 }
 
@@ -40,7 +40,7 @@ if (Math.random() * 100 << 0 > (99 - Pro[room])) {
 User = User.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
 
-send = _ => { 
+send = _ => {
 try{
 let url = new java.net.URL(Url);
 let con = url.openConnection();
@@ -75,11 +75,10 @@ br.close();
 return response;
 } catch (e) {
 return e;
-} 
-} 
+}
+}
 
 let results = JSON.parse(send());
 replier.reply(results["response"]["replies"][0]["text"]);
 }
 }
-[출처] [소스] 핑퐁핑퐁핑퐁핑퐁 (카카오톡 봇 커뮤니티) | 작성자 AlphaDo
