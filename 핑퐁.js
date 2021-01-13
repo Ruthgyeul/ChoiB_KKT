@@ -18,7 +18,7 @@ if (!On[room]) return;
 
 if (msg == "!Talk Off") {
 On[room] = false;
-replier.reply("[Bot]\nRoom : " + room + "\nTalk : Off");
+replier.reply("[Project K]\nRoom : " + room + "\nTalk : Off");
 return;
 }
 
@@ -29,12 +29,12 @@ if (isNaN(msg)) return;
 
 if (msg < 0 || msg > 100) return;
 Pro[room] = msg;
-replier.reply("[Bot]\nRoom : " + room + "\nProbability : " + msg + "%");
+replier.reply("[Project K]\nRoom : " + room + "\nProbability : " + msg + "%");
 return;
 }
 
 if (Math.random() * 100 << 0 > (99 - Pro[room])) {
-if (msg.starsWith(".")) {
+if (msg.startsWith(".")) {
 msg = msg.replace(/./,"");
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
