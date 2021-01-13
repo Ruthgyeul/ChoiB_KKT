@@ -22,7 +22,7 @@ lv[lv.findIndex(e=>e.name==sender)].xp++;
 
 if (lv[lv.findIndex(e=>e.name==sender)].xp>=Number((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 55)) {
 lv[lv.findIndex(e=>e.name==sender)].lv++;
-lv[lv.findIndex(e=>e.name==sender)].xp -= Number((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 55);
+lv[lv.findIndex(e=>e.name==sender)].xp = 0;
 FS.write(path, JSON.stringify(lv));
 replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/" + ((lv[lv.findIndex(e=>e.name==sender)].lv*20) + 55) + " exp left]");
 }
