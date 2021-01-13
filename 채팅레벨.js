@@ -33,7 +33,6 @@ lv[lv.findIndex(e=>e.name==sender)].lv++;
 lv[lv.findIndex(e=>e.name==sender)].xp -= ((lv[lv.findIndex(e=>e.name==sender)].lv*25) + 25);
 FS.write(path, JSON.stringify(lv));
 replier.reply("『 GG " + sender + "레벨업! 』\n" + Number(lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/" + ((lv[lv.findIndex(e=>e.name==sender)].lv*25) + 25) + " exp left]");
-Boolean reload();
 }
 
 if (msg == "이모티콘을 보냈습니다.") {
@@ -58,7 +57,6 @@ replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═
 if (msg == "!level") {
 let index = lv.sort((a,b)=>(((b.lv*25)+25)+b.xp)-(((a.lv*25)+25)+a.xp)).findIndex(e=>e.name==sender);
 replier.reply("『 ⭐ " + sender + " 』\n" + "═".repeat(15) + "\n『🔥』 순위 : " + (index+1) + "위\n『🔥』 레벨 : " + lv[index].lv + "LV\n『🔥』 남은 경험치 : " + lv[index].xp + "/" + ((lv[index].lv*25) + 25) + " exp\n" + "═".repeat(15));
-Boolean reload();
 }
 
 FS.write(path, JSON.stringify(lv));
