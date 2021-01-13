@@ -48,7 +48,7 @@ if (msg == "!Lrank") {
 replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*75)+b.xp)-((a.lv*75)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [" + e.lv + "LV, " + e.xp + "/75 exp left] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
-if (msg == "!level" || msg == "levels") {
+if (msg == "!level") {
 let index = lv.sort((a,b)=>((b.lv*75)+b.xp)-((a.lv*75)+a.xp)).findIndex(e=>e.name==sender);
 replier.reply("『 ⭐ " + sender + " 』\n" + "═".repeat(15) + "\n『🔥』 순위 : " + (index+1) + "위\n『🔥』 레벨 : " + lv[index].lv + "LV\n『🔥』 남은 경험치 : " + lv[index].xp + "/75 exp\n" + "═".repeat(15));
 }
