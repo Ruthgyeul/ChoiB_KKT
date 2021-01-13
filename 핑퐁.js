@@ -10,7 +10,7 @@ if (!Pro[room]) Pro[room] = 0;
 
 if (msg == "!Talk On") {
 On[room] = true;
-replier.reply("[Project K]\nRoom : " + room + "\nTalk : On");
+replier.reply("[Bot]\nRoom : " + room + "\nTalk : On");
 return;
 }
 
@@ -18,11 +18,23 @@ if (!On[room]) return;
 
 if (msg == "!Talk Off") {
 On[room] = false;
-replier.reply("[Project K]\nRoom : " + room + "\nTalk : Off");
+replier.reply("[Bot]\nRoom : " + room + "\nTalk : Off");
 return;
 }
 
-if (msg.startsWith(".")==0) {
+if (msg.startsWith("!Talk ")) {
+msg = msg.replace("!Talk ", "");
+
+if (isNaN(msg)) return;
+
+if (msg < 0 || msg > 100) return;
+Pro[room] = msg;
+replier.reply("[Bot]\nRoom : " + room + "\nProbability : " + msg + "%");
+return;
+}
+
+if (Math.random() * 100 << 0 > (99 - Pro[room])) {
+if (msg.starsWith(".")) {
 msg = msg.replace(/./,"");
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
@@ -31,11 +43,11 @@ send = _ => {
 try{
 let url = new java.net.URL(AuthURL);
 let con = url.openConnection();
-con.setRequestMethod("POST"); 
+con.setRequestMethod("POST");
 con.setRequestProperty("Content-Type", "application/json; charset=utf-8"); 
-con.setRequestProperty("Authorization", "Basic " + AuthID);
+con.setRequestProperty("Authorization", "Basic " + AuthID); 
 con.setRequestProperty("User-Agent", "Mozilla");
-con.setRequestProperty("Accpet", "*.*"); 
+con.setRequestProperty("Accpet", "*.*");
 con.setDoOutput(true);
 let wr = new java.io.DataOutputStream(con.getOutputStream());
 let writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(wr, "UTF-8"));
@@ -67,5 +79,6 @@ return e;
 
 let results = JSON.parse(send());
 replier.reply(results["response"]["replies"][0]["text"]);
+}
 }
 }
