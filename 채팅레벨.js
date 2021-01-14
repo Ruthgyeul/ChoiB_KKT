@@ -26,16 +26,22 @@ if (lv[lv.findIndex(e=>e.name==sender)].xp >= ((lv[lv.findIndex(e=>e.name==sende
 lv[lv.findIndex(e=>e.name==sender)].lv++;
 lv[lv.findIndex(e=>e.name==sender)].xp -= (((lv[lv.findIndex(e=>e.name==sender)].lv-1)*25) + 35);
 FS.write(path, JSON.stringify(lv));
-replier.reply("『GG " + sender + "레벨업!』\n" + (lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/" + ((lv[lv.findIndex(e=>e.name==sender)].lv*25) + 35) + " exp left]");
+replier.reply("『GG " + sender + " 레벨업!』\n" + (lv[lv.findIndex(e=>e.name==sender)].lv - 1) + " >> " + lv[lv.findIndex(e=>e.name==sender)].lv + "LV [" + lv[lv.findIndex(e=>e.name==sender)].xp + "/" + ((lv[lv.findIndex(e=>e.name==sender)].lv*25) + 35) + " exp left]");
 }
 
 if (msg == "이모티콘을 보냈습니다.") {
-lv[lv.findIndex(e=>e.name==sender)].xp+2;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
 if (CH.ExtraExp(msg)) {
-lv[lv.findIndex(e=>e.name==sender)].xp+5;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
+lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
