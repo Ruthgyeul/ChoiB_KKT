@@ -67,7 +67,7 @@ replier.reply("『  강화 Rank 』" + "\u200b".repeat(500) + "\n" + "═".re
 
 if(msg == "!Rlevel"){
 let index = reinf.sort((a,b)=>b.lv-a.count).findIndex(e=>e.name==sender);
-replier.reply("『  " + sender + " 』\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 강화 레벨 : " + reinf[index].lv + "Lv\n" + "═".repeat(15));
+replier.reply("『  " + sender + " 』\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 강화 레벨 : " + reinf[index].lv + "Lv\n『🏅』 " + reinf[index].counterdice + "% 확률로 강화 성공" + "═".repeat(15));
 }
 
 }
