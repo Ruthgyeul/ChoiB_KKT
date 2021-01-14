@@ -1,18 +1,19 @@
-choose = function(str) {
-str = str.split(" ");
-const rand = Math.random();
-for(let i = 1; i<=strlength; i++) {
-if (rand<i/str.length) {
-return str[i-1];
-}
-}
-};
+function response(room, msg, sender, isGroupChat, replier, ImageDB){
 
-function response(room, msg, sender, igc, replier) {
+if(msg.startsWith("ㅇ랜덤뽑기")){
 
-if (msg.startsWith("!골라")) {
-msg = msg.replace(/!골라/,"");
-replier.reply(choose(msg.slice(4));
+var a = msg.trim().substring(6);
+
+var b = a.split(",");
+
+replier.reply("[엘사람봇]\n랜덤뽑기 중..");
+
+java.lang.Thread.sleep(3000);
+
+var N = Math.floor(Math.random()*b.length);
+
+replier.reply("[엘사람봇]\n뽑기 완료!\n뽑힌 것은 "+b[N]+" 입니다!");
+
 }
 
 }
