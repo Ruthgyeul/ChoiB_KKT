@@ -11,8 +11,7 @@ chat[chat.findIndex(e=>e.name==sender)].count++;
 
 if (msg == "!rank"){
 let total = chat.map(e=>e.count).reduce((a,b)=>a+b);
-let CHname = (((e.name).replcae(" ", "")).split("").join(" ").replace("? ", ""));
-replier.reply("『  Chat Rank 』" + "\nTotal Chat : " + total + " [100.00%]" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + chat.sort((a,b)=>b.count-a.count).slice(0,150).map((e,i)=>++i + "위 [" + e.count + "회, " + (e.count/total*100).toFixed(2) + "%] :\n     " + CHname).join("\n\n") + "\n\n" + "═".repeat(20));
+replier.reply("『  Chat Rank 』" + "\nTotal Chat : " + total + " [100.00%]" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + chat.sort((a,b)=>b.count-a.count).slice(0,150).map((e,i)=>++i + "위 [" + e.count + "회, " + (e.count/total*100).toFixed(2) + "%] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
 if(msg == "!chat"){
