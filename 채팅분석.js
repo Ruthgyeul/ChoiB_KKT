@@ -2,7 +2,7 @@ function response(room, msg, sender, igc, replier){
 
 if (room.indexOf("b")) {
 
-const FS = FileStream, path = "/sdcard/ProjectK/Chat/" + room + "/chat.json";
+const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/chat.json";
 if(!new java.io.File(path).canRead()) FS.write(path, '[]');
 let chat = JSON.parse(FS.read(path));
 
