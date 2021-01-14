@@ -44,7 +44,7 @@ replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═
 }
 
 if (msg == "!level") {
-let index = chat.sort((a,b)=>((b.lv*100)+b.xp)-((a.lv*100)+a.xp).findIndex(e=>e.name==sender);
+let index = lv.sort((a,b)=>((b.lv*100)+b.xp)-((a.lv*100)+a.xp).findIndex(e=>e.name==sender);
 replier.reply("『 ⭐ " + sender + " 』\n" + "═".repeat(15) + "\n『🔥』 순위 : " + (index+1) + "위\n『🔥』 레벨 : " + lv[index].lv + "LV\n『🔥』 남은 경험치 : " + lv[index].xp + "/" + ((lv[index].lv*25) + 35) + " exp\n" + "═".repeat(15));
 }
 
