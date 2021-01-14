@@ -47,11 +47,11 @@ FS.write(path, JSON.stringify(lv));
 
 if (msg == "!Lrank") {
 let CHname = (((e.name).replcae(" ", "")).split("").join(" ").replace("? ", ""));
-replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*100)+b.xp)-((a.lv*100)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [ " + e.lv + "LV, " + e.xp + "/" + ((e.lv*25) + 35) + " exp left ] :\n     " + CHname).join("\n\n") + "\n\n" + "═".repeat(20));
+replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*10000)+b.xp)-((a.lv*10000)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [ " + e.lv + "LV, " + e.xp + "/" + ((e.lv*25) + 35) + " exp left ] :\n     " + CHname).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
 if (msg == "!level") {
-let index = lv.sort((a,b)=>((b.lv*100)+b.xp)-((a.lv*100)+a.xp).findIndex(e=>e.name==sender);
+let index = lv.sort((a,b)=>((b.lv*10000)+b.xp)-((a.lv*10000)+a.xp).findIndex(e=>e.name==sender);
 replier.reply("『 ⭐ " + sender + " 』\n" + "═".repeat(15) + "\n『🔥』 순위 : " + (index+1) + "위\n『🔥』 레벨 : " + lv[index].lv + "LV\n『🔥』 남은 경험치 : " + lv[index].xp + "/" + ((lv[index].lv*25) + 35) + " exp\n" + "═".repeat(15));
 }
 
