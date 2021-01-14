@@ -1,46 +1,57 @@
-var list = {}
-
-var 랜덤강화=["% 확률로 강화에 실패했습니다!💥","% 확률로 강화에 성공하였습니다!💫"];
-var 텀={};
 function response(room, msg, sender, isGroup, replier) {
- var 강화랜덤 = 랜덤강화[Math.floor(Math.random()*랜덤강화.length)]
-확률=Math.floor((Math.random()*99)+1);
-레벨=Math.floor((Math.random()*15)+1);
-var 수치={"% 확률로 강화에 실패했습니다!💥":"실패","% 확률로 강화에 성공하였습니다!💫":"성공"};
-if(msg=="/도움말 강화"){
-  replier.reply ("/강화 ~~로 강화합니다.\n한 번 할때마다 쿨타임 1분이 생깁니다")
-}
-if(msg.startsWith("/강화 ")){
-if(list[msg.substr(4)]==undefined){
-list[msg.substr(4)] = {강화: 0};
-        
-}
-if(텀[sender]==undefined){
-텀[sender] = true;
-}
-if(수치[강화랜덤]=="성공"&&텀[sender]==true){
-var 더하기 = parseInt(list[msg.substr(4)].강화) + parseInt(레벨); 
-   list[msg.substr(4)].강화 =더하기;
-replier.reply (확률+강화랜덤+"\n"+msg.substr(4)+"Lv."+list[msg.substr(4)].강화)
-텀[sender] = false;
+
+const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/reinf.json";
+if(!new java.io.File(path).canRead()) FS.write(path, '[]');
+let reinf = JSON.parse(FS.read(path));
+
+var FT = FT[Math.floor(Math.random()*FT.length)];
+var Dice = Math.floor((Math.random()*1000000)+1);
+var LvDice = Math.floor((Math.random()*13)+1);
+var Succ = {"% 확률로 강화 실패!💥":"실패", "% 확률로 강화 성공!💫":"성공"};
+
+if (!reinf.find(e=>e.name==sender)) reinf.push({'name':sender, 'rname':undefined, 'lv':0, 'probability':100, 'counterdice':0, 'wait':true});
+
+if(msg.startsWith("!강화 ")) {
+let rname = msg.replace(/!강화 /,"");
+
+if(reinf[reinf.findIndex(e=>e.name==sender).lv == 0) {
+reinf[reinf.findIndex(e=>e.name==sender).rname == rname;
+reinf[reinf.findIndex(e=>e.name==sender)].lv == Math.floor((Math.random()*10)+1);
+FS.write(path, JSON.stringify(reinf));
+replier.reply("100% 확률로 강화 성공!\n" + reinf[reinf.findIndex(e=>e.name==sender)].rname + " : 0Lv >> " + reinf[reinf.findIndex(e=>e.name==sender)].lv + "Lv");
+reinf[reinf.findIndex(e=>e.name==sender)].wait = false;
 java.lang.Thread.sleep(60000);
-텀[sender] = true;
+reinf[reinf.findIndex(e=>e.name==sender)].wait = true;
+}
 
-}else if(수치[강화랜덤]=="실패"&&텀[sender]==true){
-  var 빼기 =  list[msg.substr(4)].강화 -=레벨;
-  list[msg.substr(4)].강화 =빼기;
-  replier.reply(확률+강화랜덤+"\n"+msg.substr(4)+"Lv."+list[msg.substr(4)].강화)
-텀[sender] = false;
+if (reinf[reinf.findIndex(e=>e.name==sender)].lv>=1 && reinf[reinf.findIndex(e=>e.name==sender)].wait == true) {
+let LvS = Number(reinf[reinf.findIndex(e=>e.name==sender)].lv + LvDice);
+let FLvS = Number(reinf[reinf.findIndex(e=>e.name==sender)].lv -= LvDice);
+let counterN = Number(reinf[reinf.findIndex(e=>e.name==sender)].lv*1000 + Math.floor((Math.random()*10000)+1);
+let CounterDice = Math.floor((Math.random()*counterN)+1);
+let DiceS = Number(((1000000-conterN)/(10000))*100);
+let FDiceS = Number(100-DiceS);
+
+if (Dice >= CounterDice) {
+replier.reply(DiceS + "% 확률로 강화 성공!\n" + reinf[reinf.findIndex(e=>e.name==sender)].rname + " : " + reinf[reinf.findIndex(e=>e.name==sender)].lv + "Lv >> " + LvS + "Lv");
+reinf[reinf.findIndex(e=>e.name==sender)].lv == LvS;
+reinf[reinf.findIndex(e=>e.name==sender)].wait = false;
 java.lang.Thread.sleep(60000);
-텀[sender] = true; }}
-if(텀[sender]==false&&msg.startsWith("/강화 ")){
-  replier.reply ("쿨타임이 작동중입니다. 잠시 뒤 해주세요.")
+reinf[reinf.findIndex(e=>e.name==sender)].wait = true;
+} else if (Dice <= CounterDice) {
+replier.reply(FDiceS + "% 확률로 강화 실패!\n" + reinf[reinf.findIndex(e=>e.name==sender)].rname + " : " + reinf[reinf.findIndex(e=>e.name==sender)].lv + "Lv >> " + FLvS + "Lv");
+reinf[reinf.findIndex(e=>e.name==sender)].lv == FLvS;
+reinf[reinf.findIndex(e=>e.name==sender)].wait = false;
+java.lang.Thread.sleep(60000);
+reinf[reinf.findIndex(e=>e.name==sender)].wait = true;
 }
-if (msg == "/초기화 강화"&&sender=="주인") {
 
-list=[];
-        replier.reply("초기화 했습니다");
+if (reinf[reinf.findIndex(e=>e.name==sender)].wait==false && msg.startsWith("!강화 ")) {
+replier.reply (e.name + ",\n60초 쿨타임 진행중... 잠시후 다시 시도해 주세요!");
 }
 
-        
-    }
+}
+
+}
+
+}
