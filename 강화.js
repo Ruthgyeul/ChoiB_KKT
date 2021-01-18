@@ -1,3 +1,6 @@
+// ERR
+
+
 function response(room, msg, sender, isGroup, replier) {
 
 const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/reinf.json";
