@@ -47,6 +47,8 @@ lv[lv.findIndex(e=>e.name==sender)].xp++;
 FS.write(path, JSON.stringify(lv));
 }
 
+FS.write(path, JSON.stringify(lv));
+
 }
 
 if (msg == "!Lrank") {
