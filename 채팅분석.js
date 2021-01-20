@@ -16,7 +16,7 @@ replier.reply("『  Chat Rank 』" + "\nTotal Chat : " + total + " [100.00%]"
 
 if(msg == "!chat"){
 let index = chat.sort((a,b)=>b.count-a.count).findIndex(e=>e.name==sender);
-replier.reply("『  " + sender + " 』\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 채팅 수 : " + chat[index].count + "회\n" + "═".repeat(15));
+replier.reply("『 [!] " + sender + " 』\n" + "═".repeat(15) + "\n『🏅』 순위 : " + (index+1) + "위\n『🏅』 채팅 수 : " + chat[index].count + "회\n" + "═".repeat(15));
 }
 
 FS.write(path, JSON.stringify(chat));
