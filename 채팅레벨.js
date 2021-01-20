@@ -1,7 +1,7 @@
 const CH = {};
 
 CH.ExtraExp = function(msg) {
-var Extra = ["\n", "사진을 보냈습니다.", "동영상을 보냇습니다.", "음성메시지를 보냈습니다.", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", "/"];
+var Extra = ["\n", "사진을 보냈습니다.", "동영상을 보냇습니다.", "음성메시지를 보냈습니다.", "샵검색:", "#", "@", "www.", "http:", "https:", ".com", ".gov", "/", "!", "?", "안녕"];
 for (var n = 0; n < Extra.length; n++) { 
 if (msg.indexOf(Extra[n]) != -1) return true; 
 }
