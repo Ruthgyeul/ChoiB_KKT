@@ -46,7 +46,7 @@ FS.write(path, JSON.stringify(lv));
 }
 
 if (msg == "!Lrank") {
-replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*1000000)+b.xp)-((a.lv*1000000)+a.xp)).slice(0,150).map((e,i)=>++i + "위 [ " + e.lv + "Lv ▪︎ " + e.xp + "/" + ((e.lv*25) + 35) + " exp left ] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
+replier.reply("『 ⭐ Chat Level List 』" + "\u200b".repeat(500) + "\n" + "═".repeat(20) + "\n\n" + lv.sort((a,b)=>((b.lv*1000000)+b.xp)-((a.lv*1000000)+a.xp)).slice(0,20).map((e,i)=>++i + "위 [ " + e.lv + "Lv ▪︎ " + e.xp + "/" + ((e.lv*25) + 35) + " exp left ] : " + e.name).join("\n\n") + "\n\n" + "═".repeat(20));
 }
 
 if (msg == "!level") {
