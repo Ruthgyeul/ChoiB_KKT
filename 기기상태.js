@@ -11,6 +11,16 @@ array[5] = "여유 저장 공간 : " + SysDiskInfo.getUsableSpace() + " (bytes)"
 return array.join("\n");
 }
 
+Api.getPing = function(pingN) {
+var t = java.lang.System.currentTimeMillis();
+var ping = java.net.InetAddress.getByName(pingN).isReachable(1000); 
+if (ping) {
+return (java.lang.System.currentTimeMillis() - t) + "ms";
+} else { 
+return "알수없음"; 
+}
+}
+
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
 
 if (msg == "!기기상태") {
@@ -22,7 +32,7 @@ var temp = Device.getBatteryTemperature()/10;
 var pbattery = Device.getBatteryLevel();
 var version = Device.getAndroidVersionName();
 var voltage = Device.getBatteryVoltage();
-replier.reply ("앗! 방금 누가 나 불러써??\n충전상태: " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "\n\n" + systemInfos());
+replier.reply ("앗! 방금 누가 나 불러써??\n충전상태: " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "\n\n" + systemInfos() + "\n핑 : " + Api.getPing("143.59.187.162"));
 }
 
 }
