@@ -35,7 +35,7 @@ return;
 
 if (Math.random() * 100 << 0 > (99 - Pro[room])) {
 if (msg.startsWith(".")) {
-msg = msg.replace(/./,"");
+msg = msg.replace(/./, "");
 AuthID = AuthID.replace("Basic ", "");
 let jsondata = { "request": { "query": msg } };
 
