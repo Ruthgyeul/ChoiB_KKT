@@ -116,26 +116,8 @@ for (var n = 0; n < noReply.length; n++) {
 if (msg.startsWith(noReply[n])) return;
 }
   
-if (room == "지구b") {
+if (room.indexOf("b")) {
 if ((Math.floor(Math.random() * 6)) == 0) {
-var chat = CH.getRandomChat(room);
-if (chat != null && CH.isValidData(chat)) {
-CH.say(chat, replier); 
-}
-}
-}
-  
-if (room == "삐약b") {
-if ((Math.floor(Math.random() * 7)) == 0) {
-var chat = CH.getRandomChat(room);
-if (chat != null && CH.isValidData(chat)) {
-CH.say(chat, replier); 
-}
-}
-}
-  
-if (room == "하트b") {
-if ((Math.floor(Math.random() * 8)) == 0) {
 var chat = CH.getRandomChat(room);
 if (chat != null && CH.isValidData(chat)) {
 CH.say(chat, replier); 
