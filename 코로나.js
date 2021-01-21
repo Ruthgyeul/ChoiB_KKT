@@ -33,7 +33,7 @@ district += "\n";
 district += title + ": " + num + "명 " + before;
 }
 let korcov = nationwide;
-let kordis = "[지역별 코로나 현황]" + Utils.compress() + "\n\n" + district;
+let kordis = "[지역별 코로나 현황]" + "\u200b".repeat(500) + "\n\n" + district;
 replier.reply(korcov);
 replier.reply(kordis);
 }
