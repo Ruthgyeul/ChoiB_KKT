@@ -1,8 +1,8 @@
+[ 미호b ]
+https://open.kakao.com/o/
+
 [ 삐약b ]
 https://open.kakao.com/o/g53tndHc
-
-[ 지구b ]
-https://open.kakao.com/o/gkzMG6Ic
 
 [ 하트b ]
 https://open.kakao.com/o/gSE7VOsc
@@ -12,12 +12,6 @@ https://open.kakao.com/me/RTemp
 
 [ 최빈 ]
 https://open.kakao.com/me/ChoiB
-
-[ 채팅 순위 ]
-https://cafe.naver.com/nameyee?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D29537083%2526page%3D2%2526menuid%3D143%2526boardtype%3DL%2526articleid%3D28982%2526referrerAllArticles%3Dfalse
-
-[ 채팅 레벨 ]
-https://cafe.naver.com/nameyee?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D29537083%2526page%3D2%2526menuid%3D143%2526boardtype%3DL%2526articleid%3D28939%2526referrerAllArticles%3Dfalse
 
 [ 유니 코드]
 https://wepplication.github.io/tools/
