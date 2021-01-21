@@ -1,5 +1,6 @@
 const sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath(); 
 const DB = {}; 
+const compress = "\u200b".repeat(500);
 
 DB.readData = function(room, name) {
 try { 
@@ -32,9 +33,13 @@ var b = a.split(" ");
 let roomN = b[0];
 let fileN = b[1];
 let DataF = DB.readData(roomN, fileN);
-let total = 
-let member = 
-replier.reply("채팅 파일 분석: " + roomN + "\n\n전체 채팅량 : " + total + "\n채팅한 인원 수 : " + member + );
+let total = DataF.split("\n").length; 
+let member = ; // number of senders
+let memberS = ; // name of indivisual senders
+let memberC = ; // indivisual sender's msg count
+let stime = DataF.split("\n")[0]; // need edit: this will print > time:name:msg
+let etime = DataF.split("\n")[total]; // need edit: this will print > time:name:msg
+replier.reply("채팅 파일 분석: " + roomN + "\n\n전체 채팅량 : " + total + "\n채팅한 인원 수 : " + member + "\n기간 : " + stime + " ~ " + etime + );
 }
 
 }
