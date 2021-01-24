@@ -1,5 +1,12 @@
 // ERR
-
+// !강화 체온
+// - 100% 확률로 강화 성공! 0lv >> 10lv
+// !강화 체온
+// - 80.9% 확률로 강화 성공! 10lv >> 13lv
+// !강화 체온 
+// - 30% 확률로 강화 실패! 13lv >> 9lv
+// !강화 순위
+// - 1위 체온 9lv : 루체온
 
 function response(room, msg, sender, isGroup, replier) {
 
@@ -7,12 +14,12 @@ const FS = FileStream, path = "/sdcard/ProjectK/" + room + "/reinf.json";
 if(!new java.io.File(path).canRead()) FS.write(path, '[]');
 let reinf = JSON.parse(FS.read(path));
 
-var FT = FT[Math.floor(Math.random()*FT.length)];
-var Dice = Math.floor((Math.random()*1000000)+1);
-var LvDice = Math.floor((Math.random()*13)+1);
-var FLvDice = Math.floor((Math.random()*10)+1);
+var FT = FT[Math.floor(Math.random()*FT.length)]; //이게 뭐누??
+var Dice = Math.floor((Math.random()*1000000)+1); //성공 다이스
+var LvDice = Math.floor((Math.random()*13)+1); //레벨 증가
+var FLvDice = Math.floor((Math.random()*10)+1); //레벨 하강
 
-if (!reinf.find(e=>e.name==sender)) reinf.push({'name':sender, 'rname':undefined, 'lv':0, 'probability':1000000, 'counterdice':0, 'wait':true});
+if (!reinf.find(e=>e.name==sender)) reinf.push({'name':sender, 'rname':, 'lv':0, 'probability':1000000, 'counterdice':0, 'wait':true});
 
 if(msg.startsWith("!강화 ")) {
 let rname = msg.replace(/!강화 /,"");
