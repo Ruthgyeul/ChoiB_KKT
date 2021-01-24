@@ -9,7 +9,7 @@ array[3] = "메모리 전체 용량 : " + SysMemInfo.maxMemory() + " (bytes)";
 array[4] = "최대 저장 공간 : " + SysDiskInfo.getTotalSpace() + " (bytes)";
 array[5] = "여유 저장 공간 : " + SysDiskInfo.getUsableSpace() + " (bytes)";
 return array.join("\n");
-}
+};
 
 Api.getPing = function(pingN) {
 var t = java.lang.System.currentTimeMillis();
@@ -19,7 +19,7 @@ return (java.lang.System.currentTimeMillis() - t) + "ms";
 } else { 
 return "알수없음"; 
 }
-}
+};
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) { 
 
