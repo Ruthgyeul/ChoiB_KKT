@@ -2,12 +2,12 @@ var systemInfos = function() {
 var SysMemInfo = java.lang.Runtime.getRuntime();
 var SysDiskInfo = java.io.File.listRoots()[0];
 var array = [];
-array[0] = "코어 수 : " + (SysMemInfo.availableProcessors()/1000000) + "개";
-array[1] = "메모리 여유 사용량 : " + (SysMemInfo.freeMemory()/1000000) + " (MB)";
-array[2] = "메모리 사용량 : " + (SysMemInfo.totalMemory()/1000000) + " (MB)";
-array[3] = "메모리 전체 용량 : " + (SysMemInfo.maxMemory()/1000000) + " (MB)";
-array[4] = "최대 저장 공간 : " + (SysDiskInfo.getTotalSpace()/1000000) + " (MB)";
-array[5] = "여유 저장 공간 : " + (SysDiskInfo.getUsableSpace()/1000000) + " (MB)";
+array[0] = "코어 수 : " + SysMemInfo.availableProcessors() + "개";
+array[1] = "메모리 여유 사용량 : " + (SysMemInfo.freeMemory()/1000000) + "MB";
+array[2] = "메모리 사용량 : " + (SysMemInfo.totalMemory()/1000000) + "MB";
+array[3] = "메모리 전체 용량 : " + (SysMemInfo.maxMemory()/1000000000) + "GB";
+array[4] = "최대 저장 공간 : " + (SysDiskInfo.getTotalSpace()/1000000000) + "GB";
+array[5] = "여유 저장 공간 : " + (SysDiskInfo.getUsableSpace()/1000000) + "MB";
 return array.join("\n");
 };
 
@@ -32,7 +32,7 @@ var temp = Device.getBatteryTemperature()/10;
 var pbattery = Device.getBatteryLevel();
 var version = Device.getAndroidVersionName();
 var voltage = Device.getBatteryVoltage();
-replier.reply ("앗! 방금 누가 나 불러써??\n충전 상태: " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "\n\n" + systemInfos() + "\n핑 : " + Api.getPing("143.59.187.162"));
+replier.reply ("[ 최빈봇 기기 정보 ]\n\n충전 상태: " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "(단위 모름)" + "\u200b".repeat(500) + "\n\n" + systemInfos() + "\n핑 : " + Api.getPing("143.59.187.162"));
 }
 
 }
