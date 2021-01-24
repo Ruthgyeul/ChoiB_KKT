@@ -32,7 +32,7 @@ var temp = Device.getBatteryTemperature()/10;
 var pbattery = Device.getBatteryLevel();
 var version = Device.getAndroidVersionName();
 var voltage = Device.getBatteryVoltage();
-replier.reply ("[ 최빈봇 기기 정보 ]\n\n충전 상태: " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "(단위 모름)" + "\u200b".repeat(500) + "\n\n" + systemInfos() + "\n핑 : " + Api.getPing("143.59.187.162"));
+replier.reply ("[ 최빈봇 기기 정보 ]\n\n충전 상태 : " + fill[battery-1] + "\n온도 : " + temp + "°c\n배터리 : " + pbattery + "%\n안드로이드 버전 : " + version + "\n전압 : "+ voltage + "(단위 모름)" + "\u200b".repeat(500) + "\n\n" + systemInfos() + "\n핑 : " + Api.getPing("143.59.187.162"));
 }
 
 }
